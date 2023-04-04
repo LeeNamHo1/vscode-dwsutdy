@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>    table.html   </title>
+
+<style>
+  table tr td{
+   /* width:100px;*/
+    height:50px;
+    border:3px solid pink;  /* border:선굵기 선종류 색상  */
+  }
+  table{ border-spacing: 0; }
+  /*  table{ border:1px solid black;}   */
+
+  .a{
+    width:100px;
+    border:1px solid red;
+    /*background-color  */
+    background:#86E57F;
+  }
+  .b{
+    width:50px;
+    border:2px dotted blue;
+    background:rgb(165,102,255);
+  }
+  .c{
+    width:200px;
+    border:1px dashed green;
+  }
+</style> 
+</head>
+<body>
+
+  <table>
+    <tr>
+      <td class="a" colspan="2"></td>
+     
+      <td class="c"></td>
+    </tr>
+    <tr>
+      <td class="a" colspan="3"></td>
+     
+    </tr>  
+  </table>
+
+  <table>
+    <tr>
+      <td colspan="3" width="300"></td>  <td colspan="2" width="200"></td>
+    </tr>
+    <tr>
+      <td width="100"></td> <td colspan="4" width="400"></td>
+    </tr>
+    <tr>
+      <td width="100"></td> <td colspan="3" width="300"></td> <td width="100"></td>
+    </tr>
+  </table>
+
+  <table>
+    <tr>
+      <td width="50" rowspan="2"></td>  <td width="50"></td>   <td width="50" rowspan="3"></td>
+    </tr>
+    <tr>
+       <td></td> 
+    </tr>
+    <tr>
+      <td></td> <td></td> 
+    </tr>
+  </table>
+
+</body>
+</html>
+<!--  
+  table 태그에서 칸 합치기
+
+  <td></td>  <td></td>  <td></td> <td></td>
+  두번째 칸과 세번째 칸을 합치기 :  두번째td에  colspan="2" 
+
+  두번째칸 부터 네번째 칸 합치기 : 두번째 td에 colspan="3"
+  같은 줄에서  칸과 칸을 합치려면 colspan을 사용 , 합치기할 총 칸수를 입력 
+
+  세로방향 합치기
+  rowspan
+  
+
+
+  class 와 id
+  html 태그의 속성으로  class와 id 그리고 name  을 설정할 수 있다.
+  id속성 : 현재문서에 존재하는  태그에 고유 이름을 지정
+           html문서에서  유일값, 중복 안됨
+          css에서 id는 #으로 선택자기호를 사용한다.
+
+  class 속성  :  현재html문서에 존재하는 태그에  그룹을 구성하기위한 속성
+                중복 class명을 가질수 있음
+                css에서 class는   .으로 선택자기호를 사용한다.
+
+  name  속성  :  데이터의 이름(변수)
+  
+  table 태그
+  줄(행) :   <tr>
+  칸(열) :   <td>
+
+    table 태그 구조
+      table
+        └─ tbody
+             └─ tr
+                 └─ td
+
+    
+-->

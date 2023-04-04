@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <input type="number" id="num"> 
+  <button onclick="sub()">입력</button>
+  <div id="result1"></div>
+
+</body>
+</html>
+<script>
+
+// //10번 반복하는 반복문
+//   for(var i=1; i<=10; i++){
+
+//   }
+//   //7번 반복하는 반복문
+//   for(var i=4;  i<= 10; i++){
+
+//   }
+
+//   var k=21;
+//   for(var i=1; i<=k; i++){
+
+//   }
+//   //반복문 만드는 방법
+//   // 1.몇번을 반복해야 하는가 정하기
+//   // 2.시작값 (초기값) 정하기
+//   // 3.  시작값이 증가 또는 감소하여  시작값+반복횟수 또는 시작값-반복횟수 까지 표현
+//   // ( 4번반복, 시작은 2부터하는 i변수, i<(2+4) ->  i<6 )
+//   //  12번반복, 시작은 102부터 하는 i변수,  i<(102+12) ->  i<114
+//   //  4.  증감식 정하기 ( 시작값에서  얼마씩 증가하고 감소할꺼냐!!!)
+
+//   //  7번 반복, 시작은 11분터 하는 i변수, 1씩 감소 ,  조건식은?  i > 4
+
+
+// //  빙고판을 만들고싶다.
+// //  빙고판의 숫자는 총 25개이다.
+// // 랜덤 숫자로 빙고판 숫자를 출력한다.
+// //  반복문은 어떻게 만드는가?
+
+//   for( var i=1; i<=25; i++)
+
+//   var i=1;
+//   while(i<=25){
+
+//     i++;
+//   }
+
+//   for( var i=1; i<26 ; i++)
+
+// // 철수가 맛집에 줄서서 기다리고 있다.
+// // 맛집에 현재 남아있는 음식양은  15인분이다.
+// //  철수의 대기 번호는 115번이다.
+// //  철수가 음식을 먹기위해서 대기줄 맨앞의 번호가 몇번이여 하는가?
+
+// 철수 =115;
+// for( var 대기표=115;   대기표>100   ; 대기표--    )
+
+
+// // 땅콩 농사를 지었다.
+// //  수확시기가 되서  땅콩을  수확했다.
+// //  땅콩이  총 123개이다.
+// //  땅콩껍질을 까면 총 몇개인가?
+// for( var i=1;  i<=21 ; i= i+3 ){
+
+// }
+
+
+  function sub(){
+    var num = document.getElementById("num").value;
+
+    var out ="";
+
+    for(var i=1; num>=i; i++){
+      if( num%i == 0){ // % 나누기계산을 하며  결과값은 나머지값
+          out += i+" , ";
+      }
+    }
+    var res = document.getElementById("result1");
+    res.innerHTML = out;
+
+
+  }
+
+</script>

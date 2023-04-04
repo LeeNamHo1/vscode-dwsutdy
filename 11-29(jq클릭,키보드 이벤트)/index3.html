@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <style>
+    #box1, #box2{
+      width:100px;
+      height:100px;
+      display:none;
+    }
+    #box1{background:lightgreen;}
+    #box2{background:lightcoral;}
+  </style>
+  <button id="in">클릭하면 상자가 나올껄>???</button>
+  <button id="out">클릭하면 상자 안보여</button>
+  <button id="inout">클릭해봐 어서!</button>
+  <div id="box1"></div>
+  <div id="box2"></div>
+
+
+  <hr>
+  <style>
+    #flip, #pan{
+      width:500px;
+      text-align: center;
+      background:#ee5566;
+    }
+    #pan{height:200px;display:none;}
+  </style>
+  <div id="flip">클릭하면 늘어나!</div>
+  <div id="pan">어때 보여?</div>
+
+</body>
+</html>
+<script>
+  $("#flip").click(function(){
+      $("#pan").slideToggle("slow");
+      //slideDown , slideUp
+  });
+
+  $("#inout").click(function(){
+      $("#box1").fadeToggle();
+      $("#box2").fadeToggle(2000);
+  });
+
+  $("#out").click(function(){
+      $("#box1").fadeOut();
+      $("#box2").fadeOut(4000);
+  });
+  $("#in").click(function(){
+      $("#box1").fadeIn(3000);
+      $("#box2").fadeIn("slow");
+  });
+</script>

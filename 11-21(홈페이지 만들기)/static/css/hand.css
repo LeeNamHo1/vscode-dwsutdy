@@ -1,0 +1,79 @@
+
+
+#board_section{
+  display:flex;
+  flex-direction: column;
+}
+
+#product_head{
+  display:flex;
+  flex-direction: column;
+}
+.search_box{
+  width:100%;
+  padding:20px 0;
+}
+.search_input{
+  width:400px;
+  border:1px solid #778899;
+}
+.search_input input{
+  font-size:20px;
+  padding:20px 10px;
+  width:300px;
+  box-sizing: border-box;
+}
+.search_input button{
+  text-align:center;
+  padding:20px;
+  width:90px;
+  box-sizing: border-box;
+}
+.select_sort_box{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.select_box{
+  display:flex;
+  font-size:17px;
+}
+.select_box label{
+  margin-right:15px;
+}
+.sort_box ul{
+  display:flex;
+}
+.sort_box ul li{
+  padding-right:40px;
+}
+
+#product_container{
+  width: calc( 100% - 200px );
+  min-width:500px;
+  position:relative;
+  display: grid;
+  grid-template-columns: repeat(4,15rem);
+  grid-template-rows: 15rem 15rem;
+  row-gap: 30px;
+  column-gap: 30px;
+}
+.event_card{
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 0 10px #8c8c8c;
+}
+.event_img{
+  height:10rem;
+  border-bottom:2px solid #80bf41;
+  background:url('http://www.placeimg.com/250/200') no-repeat center;
+
+}
+.event_title{
+  padding:1rem;
+}
+.event_title h3{
+  text-align: center;
+  height:1.7rem;
+  font-weight:900;
+}

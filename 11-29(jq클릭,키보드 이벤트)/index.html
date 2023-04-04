@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+  <img id="box1" src="./static/image/coin_front.png">
+<style>
+  #box1{
+    width:100px;
+  }
+</style>
+
+<hr>
+<img id="img1" src="./static/image/car1.png">
+<img id="img2" src="./static/image/car2.png">
+
+<style>
+  #img1{ width:50px;}
+  #img2{width:50px;}
+</style>
+<!--  이미지 위에 마우스가 올라온다면 이미지 너비를 350px 만큼 변경하기
+      이미지위에서 마우스가 나가면 원래 이미지 크기(50px)로 돌아오기  -->
+
+      <hr>
+      <div class="img_box">
+        <img id="img4" src="./static/image/car1.png">
+        <img id="img5" src="./static/image/car1.png">
+      </div>
+      <div class="img_box">
+        <img id="img6" src="./static/image/car2.png">
+        <img id="img7" src="./static/image/car2.png">
+      </div>
+<style>
+  #img4 , #img6{
+    width:100px;
+  }
+  .img_box{
+    position:relative;
+  }
+  #img5, #img7{
+    position:absolute;
+    width:200px;
+  }
+  
+</style>
+
+
+
+
+
+</body>
+</html>
+<script>
+  $("#img5").hide();
+$("#img4").mouseover(function(){
+    var x= event.pageX;
+    var y= event.pageY-152;
+    $("#img5").css("left",x);
+    $("#img5").css("top",y);
+    $("#img5").show();
+});
+$("#img4").mouseleave(function(){
+  $("#img5").hide();
+})
+
+
+/*
+웹페이지 제작 순서 ( 당분간만 - 어느정도 실력이 될때가지(혼자서 웬만한 사이트대략적으로 만들수있는))
+1. 시안 그리기 
+2. html 태그 작업
+   - <div id='wrap'>
+      <header class='header'>
+          <nav> aaa   </nav>
+        </header>
+        <section id=''>
+           안에 들어갈내용 ...
+          </section>
+    </dv>
+
+3. css 작업하기
+    - 가장 바깥쪽 태그 부터  스타일 입히기
+     - 모든 태그를 감싸고 있는 body
+     - 그다음 body 바로 밑에 있는 id가 wrap인 div
+     - wrap div 밑에 있는 태그들
+     - 그 태그들 밑에 있는 태그들........
+
+4. 스크립트 작업하기
+*/
+
+
+
+  //자바스크립트는  함수에 의해 실행되는 것이 대부분이다.
+  // 내가 웹에서 먼가를 하려면(마우스를 클릭하든지, 키보드를 에서 키를 누르든지, 
+  //  브라우저의 위치를 옮긴다든지, 브라우저 크기를 줄이든 늘리든, 스크롤을 내리든,
+  //  올리든 )  함수를 만들어야 겠다고 생각하기!!!!!!
+  //  만들어진 함수가 실행되려면!!!  실행하기위한 동작이(이벤트) 필요하다.
+  //  웹에서 마우스클릭 할때 글씨의 모양이 바뀌거나 이미지가 다른ㅇ이미지로 변하거나
+  //  하려면 그 동작을 할수 있는 함수가 있어야 한다.
+  //  마우스 클릭할때 필요한 함수니까  클릭이라는 부분에 함수를 만들어 주면된다.
+
+  // 아래 제작할 내용은  id가 box1인 태그를 클릭하면  box1의 크기가 변하게 
+  //  만들것이다.
+  //  1. 나는 이 이미지를 클릭하면 이미지가 크게 나왔으면 좋겠다.
+  //  2. 웹에서  내가 마우스를클릭하면 어떻게 되었으면 하는지 생각했으니 그걸만들기
+  //  3. 이미지를 클릭하면 이니까  이미지에 클릭이벤트가 적용되는것
+  /*      그래서 아래와같이 코드를 만든다.
+      이미지가 있는곳의 태그 id로 선택하고 click이벤트를 부여한다.
+
+        $("#box1").click(function(){
+
+        });
+      4.  클릭이 되면 무엇을 할것인가??
+          이미지 크기가 커져야 한다.
+          이미지 크기가 변하려면 어떻게 해야 하나?
+          이미지에 적용되어있는 너비, 높이를 변경 해야한다.
+        $("#box1").click(function(){
+            $("#box1").css("width","400px");  이미지의 크기를 css에서 변경 한다.
+            이미지.css(너비,400)이라고 한 것이다.
+        });
+  */
+
+  $("#box1").click(function(){
+        $("#box1").css("width","400px");
+  });
+
+  $("#img1").mouseenter(function(){
+      $("#img1").css("width","350px");
+  });
+  $("#img1").mouseleave(function(){
+      $("#img1").css("width","50px");
+  })
+
+  $("#img2").mouseenter(function(){
+      $("#img2").css("width","350px");
+  });
+  $("#img2").mouseleave(function(){
+      $("#img2").css("width","50px");
+  })
+</script>

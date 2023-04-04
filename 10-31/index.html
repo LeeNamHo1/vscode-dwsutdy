@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<script type="text/javascript">
+  /*
+  자바  데이터저장 공간 - 변수
+  int num=90;
+  String str="이성계";
+
+  
+  자바스크립트 - 데이터저장 공간 - 변수
+  var num=90;
+  var name ="이성계";
+  var name="김춘추"; // name 변수 재선언
+  name = "장보고";
+  //  var - 재선언 가능, 데이터 재설정 가능 , 전역 변수
+  //  let - 재선언 불가, 데이터 재설정 가능 , 지역 변수
+  // const - 재선언 불가 , 데이터 변경불가능, 처음 저장된 데이터 변경 불가, 상수
+  //변수 - 운영체제에 의해서  쓰기, 읽기 권한 부여 받음
+  // 상수 - 운영체제에 의해서 읽기 권한 부여 받음
+  let age=23;
+      age =45;
+  //let age=43;  //  age 변수 재선언
+
+  const pi=3.14;
+        pi=1.234;
+  //const pi = 2.45; 
+  
+
+  var name="이성계";
+
+  alert(name);
+  document.write(name);
+  // 특정 태그에 출력하는 방법1, 방법2
+
+  //입력
+  name = prompt("이름을 입력하세요");
+  document.write(name);
+  // 특정태그의 값 가져오기( 예 - input 태그에 입력한값 가져오기)
+*/
+
+
+  //특정 태그 선택 ( 엘리먼트 객체 )
+
+</script>
+</head>
+<body>
+    <div id="output">  
+       테스트 테스트 
+    </div>
+    <div id="name">  </div>
+    <div id="job"> </div>
+
+</body>
+</html>
+<script type="text/javascript">
+/*    문제 1. prompt를 통해서  이름과 직업을 각각 입력받아서  화면에 출력하시오.
+*/
+var name = prompt("이름입력 ");
+var job = prompt("직업 입력");
+var div_name = document.getElementById("name");
+var div_job = document.getElementById("job");
+div_name.innerHTML = name;
+div_job.innerHTML = job;
+
+//  태그 선택( 엘리먼트 객체 구하기 )
+document.getElementById("태그id값");
+document.getElementsByClassName("태그class명");
+document.getElementsByName("태그name명");
+document.getElementsByTagName("태그명");
+
+document.querySelector("#태그ID명");
+document.querySelector(".태그class명");
+document.querySelectorAll(".태그class명");
+document.querySelectorAll("태그명");
+
+
+
+
+var dv = document.getElementById("output");
+  // dv ->  id가 ouput인 div 저장
+  var name="이성계";
+  dv.innerHTML=name +" 장군";
+  // innerHTML -  해당 엘리먼트(태그)에  html 형식으로 삽입해라
+</script>

@@ -1,0 +1,14 @@
+.short{
+    background: rgb(228, 96, 96);
+}
+#short{
+
+    width: 85%;
+    height: 80%;
+}
+.img_short{
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+    background: url(../image/321312.jpg) no-repeat center;
+}

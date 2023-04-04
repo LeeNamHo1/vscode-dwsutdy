@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div onclick="change_background()"> 나 클릭해줘! </div>
+
+  <div id="text1" onclick="sizeUP()"> 나를 좀더 크게 해줘</div>
+
+
+  <span onclick="pink()"> 핑크색</span> <span onclick="green()">녹색</span>
+  <div id="box1"  style="width:100px;height:100px; background:blue;"></div>
+
+  <div id="box2" onmouseover="sky()" onmouseleave="blue()" style="width:100px;height:100px; background:blue;"></div>
+  <!-- 마우스가 box2위로 올라오면 색을 변경하고 싶다.!  
+        마우스가 box2를 떠나면 색을 원래 파랑색으로 하고싶다. !  -->
+
+        <button onclick="hide()">클릭</button>
+<!--  버튼을 하나 만들어서  클릭하면  box1, box2 화면에서 보이지않게 하기
+      display 속성은 화면에 어떻게 보이게 할것인가 에 대한 속성 , 
+      값을 none(빈값) 을주면 화면에 나타나지않는다.  -->
+
+
+</body>
+</html>
+<script>
+function hide(){
+  var box1 = document.getElementById("box1");
+  var box2 = document.getElementById("box2");
+  box1.style.display="none";
+  box2.style.display="none";
+}
+
+  function blue(){
+    var box = document.getElementById("box2");
+    box.style.background="blue";
+  }
+  function sky(){
+    var box = document.getElementById("box2");
+    box.style.background="skyblue";
+  }
+
+  function pink(){
+    var box = document.getElementById("box1");
+    box.style.background="pink";
+  }
+  function green(){
+    var box = document.getElementById("box1");
+    box.style.background="green";
+  }
+
+
+  function sizeUP(){
+    var text = document.getElementById("text1");
+    text.style.fontSize="32px";
+
+    // 필요한 준비물 -  글씨를 가지고 있는 태그 가져오기
+                //     해당 태그에 style로 글씨 크기 늘려주기
+    // 나를좀더 크게해줘 글씨를 클릭하면 글씨의 크기를 크게 만들어주기
+  }
+
+  function change_background(){
+    var body = document.getElementsByTagName("body");
+    body[0].style.background="red";
+  } 
+
+</script>

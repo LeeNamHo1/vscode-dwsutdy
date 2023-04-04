@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./static/css/style.css">
+</head>
+<body>
+    <div id="wrap">
+        <section id="info-input-section">
+            <div class="info-mask">
+                <div class="info_box">
+                  <input type="text" name="name" id="name">
+                  <label for="name">이름</label>
+                </div>
+                <div class="info_box">
+                  <input type="text" name="hobby" id="hobby">
+                  <label for="hobby">취미</label>
+                </div>
+                <div class="info_box">
+                  <input type="text" name="dream" id="dream">
+                  <label for="dream">꿈</label>
+                </div>
+                <div class="info_box">
+                  <input type="text" name="respect" id="respect">
+                  <label for="respect">존경하는사람</label>
+                </div>
+            </div>
+            <a href="javascript:enroll();" class="enroll_bt">등록</a>
+        </section>
+        <section id="view_section">
+            <div class="view_box">
+                <ul id="list">
+
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
+
+<script>
+
+  const list=[]; // input으로 입력한 데이터를 가지고있는 객체들을 저장할 공간
+
+  //input으로 입력한 데이터를 info의 객체로 저장할 것이다.
+  function info(name,hobby,dream,respect){  
+    this.name=name;
+    this.hobby=hobby;
+    this.dream=dream;
+    this.respect=respect;
+  }
+
+
+$(".info_box input[type=text]").on("focus",function(){
+  $(this).next().addClass("label_active");
+});
+$(".info_box input[type=text]").on("blur",function(){
+  if( $(this).val() == "")
+    $(this).next().removeClass("label_active");
+});
+function enroll(){ 
+
+  /// 여기부터  
+  if( $("#name").val()==''){
+    alert("이름입력해!");
+    $("#name").focus();
+  }else if( $("#hobby").val()==''){
+    alert("취미 입력하라고!");
+    $("#hobby").focus();
+  }else if( $("#dream").val() == ''){
+    alert("제발 꿈 입력하라고!");
+    $("#dream").focus();
+  }else if($("#respect").val() == ''){
+    alert("존경하는사람없어?");
+    $("#respect").focus();
+     //// 여기까지가   input 에 입력했는지 안했는지 체크하는 부분 
+  }else{  // 모든 input에  다 입력했다면 ~
+    var name = $("#name").val();  // 이름 입력 값가져오기
+    var hobby = $("#hobby").val(); // 취미 입력 값 가져오기
+    var dream = $("#dream").val(); //  꿈 입력 값 가져오기
+    var respect = $("#respect").val(); // 존경하는사람 입력 값 가져오기
+
+    if ( name_check( name ))  //이름 중복 여부 확인하기위한 함수 호출 ( name값 을 함수에전달)
+    { //중복아니 라면 맛있겠다.
+      list.push( new info(name,hobby,dream, respect ) );// info 객체로 저장하기
+      var li = "<li><span>"+name+"</span><span>"+hobby+"</span><span>"+dream+
+      "</span><span>"+respect+"</span></li>";
+    
+      $("#list").append(li);  // ul 태그에 추가하기 ( 위의 li 태그를)
+
+    }else{ // 이름 중복 여부 확인해서 중복일경우
+      alert("이미 등록되어있는 이름 이구만ㅠ");
+    }
+
+    $("#name").val("");
+    $("#hobby").val("");
+    $("#dream").val("");
+    $("#respect").val("");  //input 태그 비워두기
+    $("#name").focus(); // 이름 input 태그에 커서 두기
+  }
+}
+
+//  focus는  input태그에 커서가 생기는경우의 이벤트이고,
+// blur는 input태그에 커서가 있다가 없어지는 경우의 이벤트이다.
+//  focus일경우에는 label의 글씨가 작아지고 위로 올라가야하지만
+// blur일경우에는 label의 글씨가 다시 커지고 밑으로 내려와야한다.
+// 그래서 focus일때는 label_active클래스를 추가하고
+// blur일때는 label_active클래스를 삭제한다.
+// 하지만 blur일때 input태그에 작성되어 있는경우에는 label_active를 
+// 삭제하면 안된다.
+</script>

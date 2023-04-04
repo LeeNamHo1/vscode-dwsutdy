@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./static/css/style.css">
+  <script src="./static/js/script.js"></script>
+</head>
+<body>
+
+    <div id="wrap">
+      <div class="info">
+        <h3 onclick="info_view()">주차요금안내</h3>
+        <ul class="info_content active">
+          <li>기본요금 1000원 (30분내)</li>
+          <li>기본시간 초과시 10분당 100원 추가</li>
+          <li>2시간 이상 주차시 기본요금1800원 으로변경</li>
+          <li>4시간 이상 주차시 기본요금 2800원으로 변경</li>
+          <li>요금 계산 예시 </li>
+          <li>19분주차 - 1000원</li>
+          <li>39분주차 - 1000원</li>
+          <li>40분주차 - 1100원</li>
+          <li>2시간 1분주차 - 1800원</li>
+          <li>2시간 57분주차 - 2300원</li>
+          <li>4시간 21분주차 - 3000원</li>
+        </ul>
+      </div>
+
+      <div class="parking_bt"> <button onclick="parking()">주차</button> </div>
+
+      <div class="parking_lot">
+        
+        <div id="car1">
+           <img src="./static/image/car1.png" class="active"><button class="active" onclick="out(1)">출차</button> 
+        </div>
+        <div id="car2"> 
+          <img src="./static/image/car2.png" class="active"><button class="active" onclick="out(2)">출차</button> 
+        </div>
+        <div id="car3"> 
+          <img src="./static/image/car3.png" class="active"><button class="active" onclick="out(3)">출차</button> 
+        </div>
+        <div id="car4"> 
+          <img src="./static/image/car4.png" class="active"><button class="active" onclick="out(4)">출차</button> 
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+  <div id="myid"> limit0205 </div>
+  <div id="setting"> <p>나는 천재다</p> <h2>강백호</h2></div>
+
+  <button id="change">text 교체</button>
+  <div class="text1"> 난 jyj  거꾸로해도 jyj </div>
+<hr><br><br>
+  이름 : <input type="text" id="myname" name="myname" >
+  <br>
+  비밀번호 : <input type="password" id="mypw" name="mypw">
+  <br>
+  럭키숫자 : <input type="number" id="lucky_num" name="lucky_num">
+  <br>
+  관심분야 : <input type="checkbox" name="interest" value="게임">게임
+  <input type="checkbox" name="interest" value="영화">영화
+  <input type="checkbox" name="interest" value="음악">음악
+  <input type="checkbox" name="interest" value="축구">축구
+  <br>
+  저녁 : <input type="radio" name="dinner" value="치킨">치킨
+  <input type="radio" name="dinner" value="피자">피자
+  <br>
+  몸무게: <input type="range" id="wg" name="wg" min="45" max="100" step="2">
+  <span id="wg_val"></span>
+  <br>
+  날짜 : <input type="date" id="set_date" name="set_date" value="2022-11-30">
+  <br>
+  메모 : <textarea id="memo" name="memo" style="width:200px;height:100px;"></textarea>
+
+  <button id="reg">등록</button>
+<br><br>
+  <div class="table_box">
+    <table>
+      <tr>
+        <td class="title">이름</td><td class="values" id="name"></td>
+      </tr>
+      <tr>
+        <td class="title">비밀번호</td><td class="values" id="pw"></td>
+      </tr>
+      <tr>
+        <td class="title">행운의숫자</td><td class="values" id="lucky"></td>
+      </tr>
+      <tr>
+        <td class="title">관심분야</td><td class="values" id="interest"></td>
+      </tr>
+      <tr>
+        <td class="title">저녁</td><td class="values" id="dinner"></td>
+      </tr>
+      <tr>
+        <td class="title">몸무게</td><td class="values" id="weight"></td>
+      </tr>
+      <tr>
+        <td class="title">날짜</td><td class="values" id="nowdate"></td>
+      </tr>
+      <tr>
+        <td class="title">날짜</td><td class="values" id="mymemo"></td>
+      </tr>
+    </table>
+  </div>
+  <style>
+    .table_box>table{ border-spacing: 0;}
+    .table_box>table tr td{border:1px solid #8c8c8c;}
+    .title{ width: 150px; text-align:center;}
+    .values{ width:300px; text-align:left; padding-left:15px;}
+  </style>
+</body>
+</html>
+<script>
+$("#wg").change(function(){
+  $("#wg_val").text(  $(this).val() );
+});
+    $("#reg").click(function(){
+
+        $("#name").text(  $("#myname").val()  ); //이름을 입력하면 테이블에 이름부분에 출력
+        $("#pw").text(  $("#mypw").val() ); // 비밀번호 입력하여 테이블에넣기
+        $("#lucky").text(  $("#lucky_num").val() );
+      var chk=""; // 체크박스에서 선택한 값을 저장하기위한 용도의 변수  
+        $("input[name='interest']:checked").each(function(){
+          chk = chk+$(this).val(); // this는 체크박스에서 선택된 것
+        })
+        $("#interest").text( chk );
+        $("#dinner").text(   $("input[name='dinner']:checked").val() );
+        $("#weight").text(  $("#wg").val()+"kg" );
+
+        $("#nowdate").text(  $("#set_date").val() +"오늘 : "+(new Date())  );
+//textarea 안에 작성된 내용 그대로 똑같이 출력될수 있게 만들기
+        var memo="";
+        var temp = $("#memo").val(); // textarea입력된 값 가져와서 temp에 저장
+        temp = temp.split("\n");
+        memo = temp.join("<br>");
+
+        $("#mymemo").html(  memo  );
+   });
+
+
+
+    $("#change").click(function(){
+        $(".text1").text("넌 jyj  난 리남호! 호우");
+    });
+
+
+  var id = $("#myid").text();
+  console.log(id);
+  var set = $("#setting").html();
+  console.log(set);
+  $("#setting").html("<h4>김영일이다.</h4> <b>혼자프로젝트할래요</b>");
+</script>

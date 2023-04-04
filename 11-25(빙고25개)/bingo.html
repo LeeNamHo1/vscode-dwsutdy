@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>빙고게임</title>
+
+  <link rel="stylesheet" href="./static/css/bingo.css">
+  <script
+  src="https://code.jquery.com/jquery-3.6.1.js"
+  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"></script>
+  <script src="./static/js/bingo.js"></script>
+</head>
+<body>
+  
+  <div id="state">
+      <span>빙고 : </span> <span id="line"></span>
+  </div>
+  <div id="start_bt">
+      <button onclick="start()">빙고 시작</button>
+  </div>
+    <div id="game">
+      <table>
+          <tr>
+              <td class="num" onclick="check(0,this)"></td>
+              <td class="num" onclick="check(1,this)"></td>
+              <td class="num" onclick="check(2,this)"></td>
+              <td class="num" onclick="check(3,this)"></td>
+              <td class="num" onclick="check(4,this)"></td>
+          </tr>
+          <tr>
+            <td class="num" onclick="check(5,this)"></td>
+            <td class="num" onclick="check(6,this)"></td>
+            <td class="num" onclick="check(7,this)"></td>
+            <td class="num" onclick="check(8,this)"></td>
+            <td class="num" onclick="check(9,this)"></td>
+        </tr>
+        <tr>
+          <td class="num" onclick="check(10,this)"></td>
+          <td class="num" onclick="check(11,this)"></td>
+          <td class="num" onclick="check(12,this)"></td>
+          <td class="num" onclick="check(13,this)"></td>
+          <td class="num" onclick="check(14,this)"></td>
+      </tr>
+      <tr>
+        <td class="num" onclick="check(15,this)"></td>
+        <td class="num" onclick="check(16,this)"></td>
+        <td class="num" onclick="check(17,this)"></td>
+        <td class="num" onclick="check(18,this)"></td>
+        <td class="num" onclick="check(19,this)"></td>
+    </tr>
+    <tr>
+      <td class="num" onclick="check(20,this)"></td>
+      <td class="num" onclick="check(21,this)"></td>
+      <td class="num" onclick="check(22,this)"></td>
+      <td class="num" onclick="check(23,this)"></td>
+      <td class="num" onclick="check(24,this)"></td>
+  </tr>
+      </table>
+    </div>
+
+
+
+    <table id="a" style="margin-top:100px;"></table>
+</body>
+</html>
+
+<script>
+var a = document.getElementById("a");
+var out="<tr>";
+for(var i=1;i<=50;i++){
+  out+="<td width=30 height=30 style='text-align:center;border:1px solid black;' class='b'>"+i+"</td>";
+}
+// out+="</tr><tr>";
+// for(var i=51;i<=100;i++){
+//   out+="<td width=30 height=30 style='text-align:center;border:1px solid black;' class='b'>"+i+"</td>";
+// }
+out+="</tr>";
+a.innerHTML=out;
+
+$(".b").on("click",function(){
+  $(this).css("background","skyblue");
+});
+</script>

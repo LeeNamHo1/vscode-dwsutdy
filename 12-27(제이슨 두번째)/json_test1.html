@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+    <button id="get">가져와라</button>
+    <ul id="list">
+
+    </ul>
+    <table id="tb">
+      <tr>
+        <th>Key</th>
+        <th>Value</th>
+      </tr>
+    </table>
+</body>
+</html>
+<script>
+  $("#get").click(function(){
+    url = "https://jsonplaceholder.typicode.com/todos/";
+    $.getJSON(url,{},function(jdata){
+//getJSON(주소,입력값,데이터 처리 함수)
+        $ul = $("#list"); // ul이라는 변수에 #list 태그 저장
+        $.each(jdata,function(key,value){
+            let show = "<li>키 : "+key; // show는 화면에 출력할 내용을 담아두기위한 변수
+            //key는 여러개의 값이 들어 올수 없다., key는 중복일수없다.
+            //value는  여러개의 값을 넣을수 있다., value는 중복일수 있다.
+            // 그래서 지금 value에는 여러개의 값이 키,밸류로 한쌍이 여러개 있기때문에
+            // 반복 돌려야한다.
+            $.each(value,function(k,v){
+                  show += "(키 : "+k+" , value : "+v+")";
+            });
+            show += "</li>";
+            $ul.append(show);
+        });
+    });
+  });
+</script>
+<style>
+  table tr td{
+    border:1px solid black;
+    text-align: center;
+  }
+</style>

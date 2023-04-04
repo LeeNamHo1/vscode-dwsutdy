@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+    <button id="getData_bt">데이터 가져오기</button>
+    <div id="email_show">
+      <label>email : </label> <span id="email"></span>
+    </div>
+    <div id="phone_show">
+        <label>연락처 : </label><span id="phone"></span>
+    </div>
+</body>
+</html>
+<script>
+  
+  $("#getData_bt").click(function(){
+     href="https://jsonplaceholder.typicode.com/users/1";
+     $.getJSON(href,{} ,function(r){
+        console.log(r);// r에는 url에서 가져온 json데이터들이 있다.
+        
+        $email = $("#email");
+        $phone = $("#phone");
+
+        $.each(r,function(key,value){  //each는 for문이다. 반복문 돌리면서
+          // json데이터의 key와 value로 나누어서 표현
+          if( key==="email")
+            $email.append(value);
+          if( key==="phone")
+            $phone.append(value);
+        })
+     });
+  });
+
+
+</script>

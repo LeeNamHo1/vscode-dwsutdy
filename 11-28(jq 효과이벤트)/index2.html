@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script
+  src="https://code.jquery.com/jquery-3.6.1.js"
+  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+  
+  <div id="box1" style="width:50px; height:50px;"></div>
+
+  <input type="text" id="write">
+  <input type="number" id="size">
+  <span id="out"></span>
+
+  <div id="icon" style="position:absolute;width:30px; height:30px;background:pink;"></div>
+</body>
+</html>
+
+<script>
+$(document).mousemove(function(){
+  var x= event.pageX;
+  var y = event.pageY;
+  $("#icon").css("left",x+"px");
+  $("#icon").css("top",y+"px");
+});
+
+  $("#size").keyup(function(){
+      $("#out").css("font-size", $(this).val()+"px" );
+  });
+  $("#write").keyup(function(){
+    $("#out").text(  $(this).val()  );
+  });
+
+
+  $("#box1").mouseenter(function(){
+      $(this).css("background","pink");
+  });
+</script>

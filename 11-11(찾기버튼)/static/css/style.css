@@ -1,0 +1,48 @@
+
+#search_box{
+  width:500px;
+  display:flex;
+  justify-content: space-between;
+  margin:50px auto;
+  border:2px solid gray;
+}
+#search{
+  border:0;
+  padding:0;
+  height:30px;
+  box-sizing: border-box;
+  width:400px;
+  outline:none;
+  padding:0 15px;
+}
+#search_bt{
+  border:0;
+  padding:0;
+  background:#fff;
+  width:100px;
+  cursor:pointer;
+}
+#list{
+  width:1000px;
+  border-top:2px solid gray;
+}
+.record{
+  padding:10px;
+  width:100%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.seq{
+  width:100px;
+  text-align:center;
+}
+.name{
+  width:150px;
+  text-align:center;
+}
+.job{
+  width:150px;
+  text-align: center;
+}
+

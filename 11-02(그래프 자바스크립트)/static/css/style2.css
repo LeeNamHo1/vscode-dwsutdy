@@ -1,0 +1,63 @@
+#score_wrap{
+  width:100%;
+  margin-top:50px;
+  margin-bottom:100px;
+}
+
+.student{
+  width:700px;
+  margin:10px auto;
+  font-size:20px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.student input[type=text]{
+  width:120px;
+  font-size:17px;
+  height:25px;
+  margin-right:15px;
+}
+.student input[type=number]{
+  width:70px;
+  font-size:17px;
+  height:25px;
+  margin-right:10px;
+}
+.student button{
+  width:60px;
+  font-size:15px;
+  padding:4px;
+  background:yellow;
+}
+
+.grp_bt{ width:700px; margin:0 auto;}
+.grp_bt button{
+  float:right;
+  width:100px;
+  height:35px;
+  font-size:17px;
+  background:lightgreen;
+}
+
+#box{
+  width:1000px;
+  height:350px;
+  background:#faecc5;
+}
+
+
+.board{
+  display:flex;
+  width:100%;
+  color:red;
+}
+.bar_area{
+  width:50px;
+  margin: 0 10px;
+}
+.bar{
+  width:50px;
+  height:10px;
+  margin-bottom:2px;
+}
