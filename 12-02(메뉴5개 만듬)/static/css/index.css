@@ -1,0 +1,41 @@
+
+#box{
+  width:600px;
+  height:500px;
+  overflow: hidden;
+  margin:0 auto;
+}
+#myimg{
+  width:600px;
+  display: block;
+}
+#pre, #next{
+  position:relative;
+  left:45%;
+  border:2px solid #acacac;
+  border-radius: 7px;
+  background: #6dbced;
+  font-size:20px;padding:5px 10px;
+}
+#pre:hover , #next:hover{
+  background:#8cf1d4;
+}
+
+#small{
+  margin:20px auto;
+  width:600px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.small_box{
+  width:50px;
+  height:50px;
+  margin: 0 10px;
+  overflow: hidden;
+  text-align: center;
+}
+.small_img{
+  width:100px;
+  display: block;
+}

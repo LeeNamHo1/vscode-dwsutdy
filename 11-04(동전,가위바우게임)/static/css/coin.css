@@ -1,0 +1,32 @@
+#coin_game{
+  width:800px;
+  height:auto;
+  margin:100px auto;
+}
+
+.start_bt{
+  width:200px;
+  margin:0 auto;
+}
+.start_bt button{
+  width:190px;
+  height:40px;
+  font-size:22px;
+  background:#778877;
+  color:#fff;
+}
+#message{
+  margin:50px auto;
+  width:80%;
+}
+.coin_img{
+  display:flex;
+  width:800px;
+  justify-content: center;
+}
+.coin_img img{
+  width:350px;
+}
+.coin_img img:hover{
+  border:1px solid red;
+}

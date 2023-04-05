@@ -1,0 +1,43 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+    <div id="wrap">
+        <div id="container">
+            <img src="./orion.jpg">
+            <img src="./stsci.png">
+            <img src="./swot.jpg">
+        </div>
+    </div>  
+</body>
+</html>
+<style>
+  body{padding:0; margin:0;}
+  #wrap{
+    width:100%;
+    padding:0 10px;
+  }
+  #container{
+    width:100%;
+  }
+  #container img{
+    width:100%;
+  }
+  @media screen and (min-width:768px){
+    #wrap{
+      display:flex;
+      flex-wrap: wrap;
+    }
+    #container img{ width:48%;}
+  }
+  @media screen and (min-width:960px){
+    #container img{ width:30%;}
+  }
+</style>

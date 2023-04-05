@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+<style>
+  body{ padding:0; margin:0;}
+  #wrap{
+    width:100%;
+    height:100%;
+  }
+  #header{
+    width:100%;
+    background:#000;
+    color:#fff;
+    position:relative;
+  }
+  #head{
+    width:1200px;
+    margin:0 auto;
+    padding:20px 0;
+    position:relative;
+  }
+  #head ul{
+    list-style: none;
+    padding:0; margin:0;
+    display:flex;
+  }
+  #head ul li{
+    padding:5px 50px;
+  }
+</style>
+</head>
+<body>
+    <div id="wrap">
+      <div style="height:100px; width:100%; background:lime"></div>
+      <header id="header">
+          <div id="head">
+              <ul>
+                  <li >메뉴1</li><li >메뉴2</li><li >메뉴3</li>
+                  <li >메뉴4</li><li >메뉴5</li><li >메뉴6</li>
+              </ul>
+          </div>
+      </header>
+      <div>
+         <img src="http://placeimg.com/700/800">
+         <img src="http://placeimg.com/700/800">
+         <img src="http://placeimg.com/700/800">
+      </div>
+    </div>
+    
+</body>
+</html>
+<script>
+var fix = $("#header").offset().top; // 아이디 header인 태그의 페이지내의 좌표
+//
+$(window).scroll(function(){
+    var wtop = $(window).scrollTop(); //현재 페이지에서 스크롤의 위치좌표
+   // alert(wtop);
+   if( fix < wtop ){
+      $("#header").css({ position:"fixed", zIndex:"10", top:"0"})
+   }else{
+      $("#header").css( { position:"relative"})
+   }
+
+   // #header의 위치보다  스크롤 내렸을때의 위치가 더 크다면 #header를 fixed로 변경하라
+
+
+});
+</script>

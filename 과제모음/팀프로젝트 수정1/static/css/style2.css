@@ -1,0 +1,114 @@
+#pick {
+  width:95%;
+  display: flex;
+  justify-content: space-between;
+  height: 1%;
+  position:relative;
+  z-index: 10;
+  padding-top: 10px;
+}
+
+.pick_list {
+  font-size: 18px;
+  width: 50rem;
+  display:flex;
+  justify-content: space-between;
+  list-style: none;
+  padding-left: 30px;
+}
+.pick_list li a {
+  color: rgb(116, 98, 78);
+  font-weight: 800;
+}
+.pick_list>li{
+  padding: 10px;
+}
+
+.pick_list>li a:hover{
+  border-bottom:3px solid olive;
+  cursor: pointer;
+}
+
+.search {
+  position: relative;
+  width: 300px;
+  display: inline-block;
+}
+input {
+  width: 100%;
+  border: 1px solid #bbb;
+  height: 40px;
+  font-size: 15px;
+}
+.search_img {
+  position: absolute;
+  width: 20px;
+  top: 12px;
+  right: 1px;
+  margin: 0;
+}
+
+#img_section {
+  margin-top: 50px;
+  padding-left: 70px;
+  width: 90%;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 20rem);
+  grid-template-rows: 20rem 20rem 20rem;
+  row-gap: 180px;
+  column-gap: 100px;
+}
+.img_h2 {
+  cursor: pointer;
+  text-align: center;
+  font-size: 30px;
+  font-weight: normal;
+  font-family: 'Courier New', Courier, monospace;
+}
+.img_p {
+  text-align: center;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.img_bb {
+  overflow: hidden;
+}
+.img_bg img:hover {
+  transform: scale(1.1);
+  transition-duration: 0.8s;
+}
+.img_h2:hover{text-decoration: underline;}
+@media screen and (max-width:1700px){
+  #img_section {
+    grid-template-columns: repeat(43,20rem);
+    grid-template-rows: 20rem 20rem 2rem;
+  }
+}
+@media screen and (max-width:1300px){
+  #img_section {
+    grid-template-columns: repeat(3,20rem);
+    grid-template-rows: 20rem 20rem 2rem;
+  }
+}
+@media screen and (max-width:870px){
+  #img_section {
+    grid-template-columns: repeat(2,20rem);
+    grid-template-rows: 20rem 20rem 2rem;
+  }
+  .pick_list {
+    display: inline-block;
+  }
+}
+@media screen and (max-width:560px){
+  .img_bb>img {
+    width: 100%;
+  }
+  #img_section {
+    grid-template-columns: repeat(1,25rem);
+    grid-template-rows: 25rem;
+  }
+  .pick_list {
+    display: block;
+  }
+}

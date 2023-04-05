@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<script>
+  //  자바스크립트 선언태그(<script>) 는  head태그에 작성하는게 기본룰이다.
+  //  반드시지켜야하는 룰은 아니기때문에  다른곳에 선언태그를 사용해도된다.
+  // 자바스크립트를 사용하는 이유는  html은  데이터를 계산하거나 가공하거나
+  //   할수 없기때문에  데이터를 다룰 수있는 언어가 필요하다.  
+  //  css 도 데이터를 가공하지는 못한다.
+  //  html과 css는  화면에 표시하는 역할을 하고  자바스크립트는 이둘을 제어하는 
+  //  역할이다.
+  //  예를 들어 이미지 슬라이드를 제작한다면  화면에 이미지를 표시하고
+  //  이미지를 꾸미고  왼쪽 오른쪽 이동할수있는 버튼을 만들고 꾸미고 
+  //  화면 배치 하고 하는것은  html과 css로 가능하다.
+  //  이미지 변경하는것은 자바스크립트로 작업한다. 
+  //  기본적으로 자바스크립트는 이벤트 발생시 동작하게 한다.
+  // 이벤트란 - 브라우저에서 클라이언트(사람)가 행하는 모든 행위를 의미한다.
+  //          마우스클릭, 키보드누르기, 마우스움직이기, 브라우저 크기 변경하기
+  //          브라우저 위치 이동하기, 마우스 더블클릭하기, 등등...
+
+  //자바스크립트에서 특정 태그를 제어하거나, 사용하려면
+  // document는 현재 html문서를 의미한다.
+  //getElementById 는 html문서중에서 특정 태그를 선택하기 위하 함수;
+  //  var diva = document.getElementById("a");
+  //   diva.innerText = "테스트 출력";
+</script>
+</head>
+<body>
+    <div id="a"></div>
+    <div></div>
+    <div></div>
+
+    <p class="ptag"> 나는 p태그</p>
+    <span class="spantag">나는 span 태그</span>
+    <h2 id="h2-txt"> 나는 h2 태그 </h2>
+
+
+    <div class="box"></div>
+    <div class="line"></div>
+    <div class="box"></div>
+    <div class="line"></div>
+
+    <div onclick="this.innerHTML=Date()"> 현재 시간 </div>
+
+</body>
+</html>
+<style>
+  #h2-txt:hover{  /* css 선택자 : 클래스 .  ,  id #,  input[type=text] */
+    background:#778888;
+  }
+  .box , .line{ height:20px; }
+  .box{background:pink;}
+  .line{background:green;}
+</style>
+
+<script>
+
+  // 배열 관련 함수
+const arr=[10,20,30,40,50,60,70,80,90];
+document.write( arr.toString() );
+//toString() 은 배열안에 저장된 데이터를 전부 문자열로 출력
+document.write( "<br>"+arr.join("+") );
+// join("-") 은 배열의 각 데이터 사이에 ( )안의 문자열을 포함시켜 문자열로 출력
+
+arr.pop();
+document.write( "<br>" + arr.toString() );
+//pop() 은 배열의마지막 데이터를 제거 하는 함수
+
+arr.push(100);
+document.write("<br>" + arr.toString()  );
+  //push() 는 배열의 마지막에 새 데이터 저장하는 함수
+
+document.write("<br>"+ arr.length );
+//length 는 배열에 저장된 데이터의 갯수를알려준다.
+
+delete arr[2];
+document.write("<br>"+arr.toString() );
+//delete는 배열의 인덱스를 이용하여 값 삭제 하는 연산자
+
+document.write( "<br>"+ arr.splice(2,3) );
+document.write("<br>"+arr.toString() );
+//splice는 배열의 인덱스를 이용하여 원하는 만큼 삭제 또는 추가 가능
+
+
+const list = "김-박-장-이-왕-현-오-황".split("-");
+document.write("<br>"+ list.toString() );
+// split은  문자열을  지정한 문자로 분리하여 배열로 저장
+
+
+// var a =10;
+// a=300;
+// var a=20;  // var - 재선언, 재초기화, 다른값저장 가능
+// let b=30;
+// b=400;
+// let b=20; // let - 재선언 안됨,다시 초기화 안됨, 다른값저장 가능
+// const c=100; 
+// c=20;
+// const c=1000; // 재선언,초기화,다른값저장 불가
+
+
+window.addEventListener("click",function(){
+  var box = document.querySelectorAll(".box:hover");
+  box[0].innerHTML="마우스 치워라!";
+});
+  
+
+  var ptag = document.querySelectorAll(".ptag");
+  ptag[0].innerText = "querySelectorAll로 선택함";
+
+  var span = document.querySelector(".spantag");
+  span.innerHTML="querySelector 로 선택"
+
+  var h2 = document.querySelector("#h2-txt");
+  h2.innerHTML="querySelector로  id 선택";
+
+  // querySelector(css선택자);
+  // querySelector 는  동적으로  태그를 선택하는 방식이다.
+  // querySelector는  현재 태그의 변화에 맞춰서 동작한다.
+  // querySelector는  다중태그를 선택할수 있고  단일 태그를 선택할수 있다.
+  // getElement 처럼  함수이름에 선택할수 있는 선택자가 정해져있지 않다.
+
+
+
+  var diva = document.getElementById("a");
+      diva.innerText = "테스트 출력";
+  var divs = document.getElementsByTagName("div");
+  divs[0].innerText=" div 태그 ";
+  divs[1].innerText=" div 태그 ";
+  divs[2].innerText=" div 태그 ";
+
+  
+
+
+
+</script>
+
+
+
+<!--
+
+  자바스크립트는 함수형 언어이다.
+  자바 는 객체 지향 언이다.
+  객체 지향 언어는  클래스와 객체를 중심으로 프로그램 실행
+
+  함수형 언어는  함수 중심으로 동작하는 언어이다. 
+  함수형 언어에서 함수를 빼고 만들어 사용할 수 없다. 
+  function a(){  }
+
+  document.getElementById();
+  classList.remove();
+
+  함수의 형태는    출력타입 함수이름(매개변수) {  }
+  자바스크립트 함수는  함수이름(매개변수){  }
+  함수실행( 함수 호출) ->  함수이름();   send(); 
+ 
+  function a(){
+
+  }
+
+  a(); -> a라는 이름의 함수를 실행하는 코드
+
+-->

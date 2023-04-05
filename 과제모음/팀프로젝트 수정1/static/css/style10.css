@@ -1,0 +1,355 @@
+li{list-style: none;}
+ul{margin: 0; padding: 0;}
+article{
+    width: 100%;
+    height: 100%;
+    background: #f1f1f17a;
+}
+/* 결제 메뉴 상단 */
+
+
+
+#cash{
+    width: 70%;
+    min-width: 100rem;
+    height: 100%;
+    margin: 0 auto;
+}
+#cash_box{
+    width: 100%;
+    text-align: center;
+    padding: 30px 50px;
+}
+.order_top{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 5rem;
+    line-height: 5rem;
+    cursor: default;
+    
+    
+}
+.order_top1{
+    padding-left: 20px;
+}
+.order_top2{
+    padding-right: 20px;
+}
+
+
+
+/* <!-- 결제 메뉴 중간 --> */
+
+#order_list{
+    width: 100%;
+    height: 75rem;
+    
+}
+#product{
+    height: 10rem;
+    border: 1px solid black;
+    border-radius: 0 0 30px 20px / 0 0 20px 20px;
+    background: #fff;
+}
+table{
+    width: 100%;
+}
+.product_img>a>img{
+    width: 120px;
+    border-radius: 50px;
+}
+
+/* 배송지정보 */
+#shipping_address{
+    width: 100%;
+    height: 25rem;
+    border: 1px solid black;
+    border-radius:  30px 20px  /  20px 20px ;
+    background: #fff;
+    
+}
+#shipping_address_main{
+    width: 90%;
+    height: 90%;
+    padding: 2rem 2rem 1rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+
+#shipping_address_box1{
+    width: 67%;
+    height: 100%;
+}
+
+
+
+.select>li:nth-child(5){
+    height: 20px;
+}
+input[type=checkbox]{
+    margin-left: 20px;
+}
+
+#delivery1>li{
+    margin: 12px;
+    background: olive;
+}
+#delivery2{
+    display: flex;
+}
+.delivery2_box1>div{
+    margin: 15px 0;
+}
+.delivery_box{
+    margin-right: 20px;
+}
+.card2_box{
+    display: none;
+}
+.delivery2_box2>div{
+    margin: 7px 0;
+}
+/*배송지 정보 입력 */
+.delivery2_box2{
+    display: flex;
+    flex-direction: column;
+}
+.delivery_box2{
+    width: 25%;
+}
+.numberinput{
+    width: 40px;
+}
+
+/* 결제 선택 */
+.cheak{
+    display: inline-block;
+    background: rgb(225, 225, 225);
+    margin-left: 20px;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#cheak_1>div{
+    display: inline-block;
+}
+
+/*배송지 정보 결과창 */
+#shipping_address_box2{
+    width: 30%;
+    height: 80%;
+    padding: 0 20px 0 20px;
+    border-left: 2px solid black;
+}
+.address_box2_text{
+    font-style: 20px;
+    font-weight:900 ;
+}
+.span_main{
+    font-size: 25px;
+    font-weight: bold;
+    
+}
+
+
+#details{
+    height: 30rem;
+    border: 1px solid black;
+    border-radius:  30px 20px  /  20px 20px ;
+    background: #fff;
+    
+}
+/* 모더 */
+#modal{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    z-index: 200;
+}
+/* 모더 양쪽 */
+.side_modal{
+    width: 100px;
+    height: 500px;
+    position: absolute;
+    background: black;
+}
+.border1{
+    border-radius: 15px 0  0 15px;
+}
+.border2{
+    border-radius: 0 15px 15px 0;
+}
+.side_modal>h3{
+    color: #fff;
+    text-align: center;
+}
+.right_side{
+    width: 100rem;
+    left: 10%;
+    top: 10%;
+    position: relative;
+}
+.right_side>div{
+    color: #fff;
+    margin: 10px;
+}
+.right_side>div>span{
+    font-size: 18px;
+}
+.right_side>div:nth-child(5){
+    width: 10%;
+    border: 1px solid #fff;
+}
+.btn_poss{
+    position: absolute;
+    left: 10%;
+    top: 55%;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    background: rgb(241, 177, 177);
+}
+.btn_poss>div{
+    text-align: center;
+}
+.btn_poss>div>p{
+    color: black;
+}
+.btn_poss:hover{
+    background: gray;
+    cursor: pointer;
+}
+/* 모더 위에 */
+.top_modal{
+    position: absolute;
+    left: 11%;
+    width: 100%;
+}
+.top_box>div{
+    display: inline-block;
+}
+.top_modal>div:nth-child(2){
+    border-bottom: 1px solid black;
+    width: 700px;
+}
+h4{
+    margin: 10px 200px 10px 40px;
+}
+.side2{
+    left: 75%;
+    bottom: 0%;
+    width: 250px;
+}
+.a{
+    width: 35%;
+}
+.a>input{margin: 0 0 0 3.5px;}
+.td_text{
+    font-size: 13px;
+}
+
+
+
+/* 모더 배경 */
+.modal_back{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: rgba(187, 187, 1, 0.63);
+    width: 100%;
+    height: 100vh;
+    opacity: 0.7;
+}
+
+.modal_front{
+    position: relative;
+    width: 900px;
+    height: 500px;
+    background: #fff;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+}
+.modal_input{
+    position: relative;
+    top: 25%;
+    left: 15%;
+    display: grid;
+    grid-template-rows: repeat(3, 7rem);
+    grid-template-columns: repeat(4, 7rem);
+}
+.modal_input>div{
+    width: 80px;
+    cursor: pointer;
+}
+.modal_input>div>p{text-align: center;}
+.img{
+    width: 80px;
+    height: 70px;
+    margin: 0 auto;
+    
+}
+.modal_input>div:hover{
+    background: #c4c4c4b7;
+    transition-duration: 0.4s;
+    border-radius: 20px;
+}
+
+
+.modal_input a{
+    text-decoration: none;
+    color: black;
+    background: #b0daea;
+    display: block;
+    text-align: center;
+    border-radius: 3px;
+    font-size: 1.7rem;
+    padding: 0.7rem;
+}
+
+
+
+
+
+#teacher{
+    color: black;
+    cursor: pointer;
+}
+
+.Information{
+    color: black;
+}
+#teacher:hover,.Information:hover{text-decoration: underline;}
+#teacher_img{
+    display: none;
+    position: absolute;
+    left: 650px;
+    top: 620px;
+}
+
+.what{cursor: pointer;}
+#what_the{
+    display: none;
+    position: absolute;
+    top: 640px;
+    left: 1325px;
+    background:gray;
+}
+#what_the>p{font-size: 20px; color: #fff;}
+#what_the::after{
+    content:""; 
+    position: absolute; 
+    top: -20px; 
+    right: 20px; 
+    border-left: 20px solid transparent; 
+    border-right: 20px solid transparent; 
+    border-bottom: 20px solid gray;
+}

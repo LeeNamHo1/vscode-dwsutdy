@@ -1,0 +1,101 @@
+body, ul, p,h1,h2,h3,h4,h5{
+  padding:0;
+  margin:0;
+}
+a{
+  text-decoration: none;
+}
+ul{list-style: none;}
+
+/* 반응현 페이지 제작시 단위는
+  % , em,rem,vw,vh
+*/
+#wrap{
+  width:100%;
+  position:relative;
+  display:flex;
+  flex-direction: column;
+}
+
+.header{
+  position:relative;
+  display:flex;
+  padding:1rem;
+  box-sizing: border-box;
+  width:100%;
+  align-items: center;
+}
+.logo{
+  width:50%;
+}
+.logo img{
+  width:100px;
+}
+.menu_nav{
+  width:50%;
+  text-align:right;
+  padding-right:2%;
+  box-sizing: border-box;
+  position:relative;
+}
+.menu_icon{
+  font-size:2rem;
+  cursor:pointer;
+}
+.nav{
+  width:90%;
+  padding-right:5%;
+  font-size:1.5rem;
+  z-index: 10;
+  background:#fff;
+  display: none;
+  position:absolute;
+}
+
+.section1{
+  width:100%;
+  position:relative;
+  padding:1rem;
+  box-sizing: border-box;
+}
+.content{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  position:relative;
+}
+.content_item{
+  width:100%;
+  overflow: hidden;
+  margin-bottom:20px;
+}
+.content_img{
+  width:100%;
+  overflow: hidden;
+  max-height:100vw;
+}
+.content_text{
+  width:90%;
+  padding:0 5%;
+}
+.content_text p{
+  height:60px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+/* 태블릿용 */
+@media screen and (min-width:768px){
+  .logo img{
+    width:150px;
+  }
+}
+
+/* PC용 */
+@media screen and (min-width:960px){
+
+}

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script
+  src="https://code.jquery.com/jquery-3.6.1.js"
+  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"></script>
+
+</head>
+<body>
+  
+  <div id="box">감추기</div>
+  <div id="box2">보이기</div>
+  <h2 >  제이쿼리 사용설명서  <br> 1. a블라블라블라블라 <br>2. 어쩌고저쩌고어쩌고 </h2>
+
+  <div id="dbclick" style="height:50px; width:50px; background:pink;"> </div>
+
+  <div class="over">마우스 이리와</div>
+
+  <input type="text" id="org">
+  <span id="copy"></span>
+
+  <input type="date"  id="set_date">
+  <p> 선택날짜 :  <span class="sel_date"></span></p>
+
+<style>
+  .addr_box{
+    position:relative;
+    padding:30px;
+  }
+  .addr_box label{
+    position:absolute;
+    left:35px;
+    top:33px;
+   /*  animation-duration: 2s;  애니메이션 적용시간 */
+   /* animation-name: moveout;   적용할 애니메이션 이름 */
+  }
+  @keyframes moveout{
+    from{
+      top:33px;
+    }
+    to{
+      top:0;
+    }
+  }
+</style>
+
+  <div class="addr_box">
+    <input type="text" id="addr">
+    <label for="addr">주소</label>
+  </div>
+
+<div id="rect"></div>
+<style>
+  #rect{
+    background:orange;
+    width:100px;
+    height:100px;
+    position:relative;
+    animation-name : slide; /* 애니메이션 이름 */
+    animation-duration: 4s; /* 애니메이션 동작시간 */
+    animation-direction:alternate;  /* 애니메이션 재생 설정( 앞으로만 이동, 뒤로 이동, 번갈아재생) */
+   /* alternate - 앞뒤 재생,  normal-앞으로재생, reverse-뒤로 재생 ,  alternate-reverse - 뒤앞재생*/
+   
+    animation-iteration-count: infinite; /*  재생 횟수 설정 ,숫자로재생회수 설정, 무한반복*/
+  }
+  @keyframes slide{
+    0% { left:0; }
+    25% { background:red; left:100px;}
+    50% { background:blue; left:200px;}
+    75% { background:pink; left:250px;}
+    100% {background:green; left:300px;}
+
+
+  /*  from{
+      left:0;
+    }
+    to{ left:100px;}*/
+  }
+</style>
+
+<div id="line_active">
+  <span></span>
+  <span></span>
+  <h2>라인애니메이션</h2>
+</div>
+<style>
+  #line_active{position:relative; height:80px;}
+  #line_active h2{ position:relative; top:30px;}
+  #line_active span:nth-child(1){
+    height:3px;
+    width:30px;
+    display:inline-block;
+    background:red;
+    box-shadow: 0 0 2px 1px red;
+    position:absolute;
+    top:25px;
+    animation: move1 0.5s linear infinite;
+    animation-direction: alternate;
+  }
+  #line_active span:nth-child(2){
+    height:3px;
+    width:30px;
+    display:inline-block;
+    background:blue;
+    box-shadow: 0 0 2px 1px blue;
+    position:absolute;
+    top:65px;
+    animation: move2 0.5s linear infinite;
+    animation-direction: alternate;
+    animation-delay: 0.3s;
+  }
+
+  @keyframes move1{
+    from{left:0;}  to{left:165px;}
+  }
+  @keyframes move2{
+    from{left:0;}  to{left:165px;}
+  }
+</style>
+
+</body>
+</html>
+<script>
+    $("#addr").focus(function(){
+        $(".addr_box>label").css("animation-duration","2s");
+        $(".addr_box>label").css("animation-name","moveout");
+        $(".addr_box>label").css("top","0");
+    });
+
+
+    $("#set_date").change(function(){
+        $(".sel_date").text(  $(this).val()  );
+    });
+
+
+
+    $("#org").keydown(function(){
+        $("#copy").text(  $(this).val()  ); // 자바스크립트에서는 input의 값을 value 라고 하고
+                                     //  query에서는 val() 라고 한다.
+    });
+
+    // $(".over").mouseleave(function(){
+    //     alert("마우스 갔다........");
+    // });
+    // $(".over").mouseenter(function(){
+    //     alert("마우스 왔다.");
+    // });
+
+    $("#dbclick").dblclick(function(){
+        $(this).hide();
+    });
+
+
+    $("#box").click(function(){
+        $("h2").hide();
+    });
+    $("#box2").click(function(){
+        $("h2").show();
+    });
+
+//  제이쿼리 이벤트 설정 방법
+/*
+    $("#box").click(function(){ 클릭하면 실행할 내용   });
+    $("#box").on("click",function() {  클릭하면 실행할 내용 } );
+
+    on 함수 없이 이벤트 적용할수있는  이벤트 들
+    click - 마우스 왼쪽 버튼 클릭
+    dbclick - 마우스왼쪽 버튼 연속으로 두번클릭
+    mouseenter - 마우스 커서가 위로 올라올경우
+    mouseleave - 마우스 커서가  떠날경우
+    keypress  -  키보드 아무키나 누른경우
+    keydown  - 키보드 아무키나 누른경우
+    keyup - 키보드 아무키나 눌렀다가 뗀 경우
+    change - input 태그의 값이 변경된경우 ( input type=text 에 글씨를 작성하면 작성할때마다 change)
+    focus - input 태그에 글씨작성할수 있는 커서가 나타난 경우
+    blur - input 태그에서 커서가 사라진경우
+    load - 브라우저의 모든 html이 화면에 표시된경우
+    resize - 브라우저의 크기가 변경된경우
+    scoll - 브라우저의 스크롤을 움직인경우
+
+
+*/
+
+
+  // var d = document.getElementById("box");
+  // d.innerHTML="자바스크립트 출력";
+ // d.addEventListener();
+
+ // $는 제이쿼리 예약어,  제이쿼리 시작하려면 $로 시작한다.
+ // $( 선택 대상 태그 )  -  대상태그의 아이디로 선택한다면 #아이디
+ //                        대상태그의 class로 선택한다면 .클래스명
+ 
+// 제이쿼리 목적은 자바스크립트를 쉽게 사용할수 있도록 하는것
+// 자바스크립트에 비해 훨씬더 적게 작성할 수 있다.
+// 제이쿼리는 대부분  태그를 선택하여 작업을 하기 때문에  $( 선택자) 이것만
+//    잘 기억해 두세요.
+
+//제이쿼리는  제이쿼리 사이트에서 라이브러리를 다운로드받아  작업하는 디렉토리(폴더)
+//에  비치해두고 사용하는 방법이 있고  cdn을 이용해서 사용하는 방법이 있다.
+
+//$("#box")  , $(".box_t") , $("div")  
+
+
+//   $("#box").html("제이쿼리 출력");
+//  // $("#box").on("click", 이벤트 발생시 실행될 함수) ;
+//   $("#box").click( function(){
+//       $(this).css("background","pink");  // 제이쿼리 이용한 css 적용
+//       //       .css(스타일 속성, 속성에 적용할 값);
+//   });
+
+</script>

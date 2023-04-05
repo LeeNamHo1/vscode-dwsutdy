@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+      <div>
+        <input type="text" id="name" placeholder="이름">
+        <input type="text" id="birth" placeholder="생년월일">
+        <input type="text" id="email" placeholder="이메일">
+        <button id="send_bt">서버전송</button>
+      </div>
+</body>
+</html>
+<script>
+  $("#send_bt").click(function(){
+      wname = $("#name").val();
+      wbirth = $("#birth").val();
+      wemail = $("#email").val();
+      let obj = {name: wname, birth:wbirth , email :wemail }
+      var json_data = JSON.stringify(obj);
+  });
+
+  // //이거는 자바스크립트 객체이고
+  // var jobj = {name : "오시우", hobby:"멍때리기",city:"우시오"}
+  // //이거는 자바스크립트객체를 JSON데이터로 변환 
+  // var json_data = JSON.stringify(jobj);
+
+  // document.write( json_data + "<br>");
+</script>

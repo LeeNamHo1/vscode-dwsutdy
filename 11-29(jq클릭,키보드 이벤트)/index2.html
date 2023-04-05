@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <!--  jquery  문제 풀기 (전부다 맞추시면 ~~ 흠... )-->
+
+  <b>1번 문제 - 클릭하면  보이지않게 감추기 를 만드세요</b>
+  <p id="p">나를 클릭해줘 제발... </p>
+
+  <b>2번 문제 - 더블클릭하면 보이지않게 감추기 를 만드세요(시간5분)</b>
+  <p id="p2">나를 클릭해줘 제발... 두번째이야기... </p>
+
+  <b>3번 문제 - input 태그안에 이름을 입력하면 input태그를 감추기 (시간 8분)</b>
+  <input type="text" name="myname" id="myname">
+
+
+  <b>4번 문제 - p태그 위에 마우스가 올라오면 배경색을 pink 로 변경하기(시간 8분)</b>
+  <p id="pink">내가 좋아하는 색은 파랑색</p>
+
+
+  <b>5번 문제 - MBTI를 입력하면   '나의 mbti는 infj'  라고 출력 되어야한다.
+               infj의 글씨 크기는 20px,  색은 파랑색
+               힌트) input태그에 입력된 값은    .val()  로 구할수 있다.
+  </b>
+  <input type="text" name="mbti" id="mbti" placeholder="당신의 mbti를입력하세요">
+  <p id="result">나의 mbti는 <span class="my"></span></p>
+
+</body>
+</html>
+<script>
+  $("#mbti").keyup(function(){
+      $(".my").text( $(this).val() );
+      $(".my").css("color","blue");
+      $(".my").css("font-size","20px");
+  });
+
+  $("#pink").mouseenter(function(){
+      $(this).css("background","pink");
+  });
+
+  $("#myname").keypress(function(){
+      $(this).hide();
+  })
+
+  $("#p2").dblclick(function(){
+      $(this).hide();
+  });
+
+  $("#p").click(function(){
+      $(this).hide();
+  });
+</script>

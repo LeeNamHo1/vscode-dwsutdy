@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>주차장</title>
+    <link rel="stylesheet" href="./static/css/style.css">
+    <script src="./static/js/script.js"></script>
+</head>
+<body>
+    <!-- 시작 -->
+    <div id="wrap">
+        <div>
+
+            <input id="check-btn" type="checkbox" />
+            <label for="check-btn"><h2>주차요금 안내!</h2></label>
+            <ul class="menubars">
+                <p>
+                    기본시간 초과시 10분당 100원 추가<br>
+                    2시간 이상 주차시 기본요금 1800원으로 변경<br>
+                    4시간 이상 주차시 기본요금 2800원으로 변경<br>
+                    요금 계산 예시<br>
+                    19분 주차 - 1000원<br>
+                    39분주차 - 1000원<br>
+                    40분주차 - 1100원<br>
+                    2시간 1분주차 - 1800원<br>
+                    2시간 57분주차 - 2300원<br>
+                    4시간 21분주차 - 3000원<br>
+                </p>
+            </ul>
+            <!-- <h2 id="self">주차요금 안내</h2> -->
+            <!-- <div class="main">
+                <p>
+                    기본시간 초과시 10분당 100원 추가<br>
+                        2시간 이상 주차시 기본요금 1800원으로 변경<br>
+                        4시간 이상 주차시 기본요금 2800원으로 변경<br>
+                        요금 계산 예시<br>
+                        19분 주차 - 1000원<br>
+                        39분주차 - 1000원<br>
+                        40분주차 - 1100원<br>
+                        2시간 1분주차 - 1800원<br>
+                        2시간 57분주차 - 2300원<br>
+                        4시간 21분주차 - 3000원<br>
+                </p>
+            </div> -->
+            <button id="start">주차</button>
+        </div>
+    </div>
+    <!-- 중간 -->
+    <div id="main">
+        <div>
+            <img class="img_view">
+            <button class="img_delete active" onclick="stop(this,0)" data-value="0">출차</button>
+        </div>
+        <div>
+            <img class="img_view">
+            <button class="img_delete active" onclick="stop(this,1)" data-value="1">출차</button>
+        </div>
+        <div>
+            <img class="img_view">
+            <button class="img_delete active" onclick="stop(this,2)" data-value="2">출차</button>
+        </div>
+        <div>
+            <img class="img_view">
+            <button class="img_delete active" onclick="stop(this,3)" data-value="3">출차</button>
+        </div>
+    </div>
+</body>
+</html>

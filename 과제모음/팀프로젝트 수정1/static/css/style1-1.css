@@ -1,0 +1,9 @@
+.Brand{
+    border-bottom:3px solid olive;
+}
+#menu_box .Brand_text{
+    color:rgb(116, 98, 78);
+}
+.icon_color>i{
+    color:rgb(59, 50, 40);
+}

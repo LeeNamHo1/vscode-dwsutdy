@@ -1,0 +1,73 @@
+body, ul, div, p {
+  padding:0;
+  margin:0;
+}
+#wrap{
+  width:800px;
+  position:relative;
+  margin:0 auto;
+  margin-top:100px;
+}
+#input_box{
+  width:100%;
+  height:80px;
+  position:relative;
+}
+#input_mask{
+  width:800px;
+  height:80px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap:15px;
+  margin:0 auto;
+}
+.input_ input{
+  width:200px;
+  height:30px;
+  font-size:20px;
+  padding-left:10px;
+  border:1px solid #8c8c8c;
+}
+#reg_bt{
+  height:34px;
+  font-size:20px;
+  padding:3px 10px;
+  background:pink;
+  border:0;
+  animation: light 0.5s infinite; 
+}
+@keyframes light{
+  from{box-shadow: 0 0 0px pink;}
+  to{box-shadow: 0 0 20px rgb(243, 122, 142);}
+}
+
+
+#title_wrap{
+  width:100%;
+  position:relative;
+}
+ul{
+  list-style:none;
+  display: flex;
+  text-align: center;
+}
+ul li{
+  width:25%;
+  padding:15px 0;
+}
+ul li:nth-child(2){
+  border-left:1px solid #acacac;
+  border-right:1px solid #acacac;
+}
+ul li:nth-child(3){
+  border-right:1px solid #acacac;
+}
+
+.itemDelete{
+  font-size:25px;
+  padding:0 15px;
+  border:0;
+  background:#f39c43;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+  <style>
+    .line{
+      display:flex;
+    }
+    .circle{ border-radius: 100%;border:1px solid black;width:20px;}
+  </style>
+</head>
+<body>
+    <div id="box">
+        <div class="line">
+          <div class="circle"></div>
+          <input type="text">
+          <button class="delete">-</button>
+        </div>
+        <button class="add">+</button>
+    </div>
+</body>
+</html>
+<script>
+  $(".add").click(function(){
+      $(this).before('<div class="line"><div class="circle"></div><input type="text"> <button class="delete">-</button></div>');
+  
+      $(".delete").click(function(){
+        $(this).parent().remove();
+      });
+  
+  });
+
+  
+</script>

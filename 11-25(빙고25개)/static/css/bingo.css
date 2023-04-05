@@ -1,0 +1,46 @@
+
+#state{
+  width:400px;
+  margin:0 auto;
+  margin-top:50px;
+}
+#line{
+  font-size:20px;
+  font-weight:900;
+  color:red;
+}
+#start_bt{
+  width:400px;
+  margin:0 auto;
+  padding:20px 0;
+}
+#start_bt button{
+  font-size:20px;       /* 글씨크기 */
+  font-family: "궁서";   /* 글씨모양 글꼴 */
+  border:0;              /* 버튼 테두리선 제거 */
+  background:#dcdcdc;  /* 버튼 배경색 */
+  padding:5px 10px;      /* 버튼 안쪽 여백 줘서 글씨가 버튼에 곽차보이지않게 */
+  border-radius: 15px;  /* 버튼의 모서리를 둥글게 */
+  cursor:pointer; /* 버튼위에 마우스올라오면  마우스모양 손바닥으로 */
+}
+
+#game{
+  width:400px;
+  margin:0 auto;
+  margin-top:30px;
+}
+#game table{ width:400px; border-spacing: 0;}
+#game table tr td{
+  width:80px;
+  box-sizing: border-box;
+  border:1px solid black;
+  height:80px;
+  font-size:30px;
+  text-align: center;
+  color:red;
+}
+#game table tr td:hover{
+  background:#8c8c8c;
+  color:white;
+  font-size:35px;
+}

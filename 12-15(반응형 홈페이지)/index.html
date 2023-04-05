@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <script
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+
+  <title> 볼링 </title>
+ <!-- <link rel="stylesheet" href="v1.css">  --> 
+   <!--<link rel="stylesheet" href="v2.css">-->
+  <link rel="stylesheet" href="v3.css">
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <div class="img_box">
+                <img src="./Bowling-Strike-PNG-Image.png">
+            </div>
+            <div class="menu_box">
+                <div class="menu_icon">
+                  <i class="bi bi-justify"></i>
+                </div>
+                <div class="bar"></div>
+                <div class="nav1">
+                  <div><a href=''>볼링강좌</a></div>
+                  <div><a href=''>점수인증</a></div>
+                </div>
+                <div class="nav2">
+                  <div><a href=''>볼링의역사</a></div>
+                  <div><a href=''>볼링은 나 처럼</a></div>
+                  <div><a href=''>터키터키</a></div>
+                  <div><a href="">볼링킹만화</a></div>
+                </div>
+                <div class="nav3">
+                  <div><a href=''>볼링강좌</a></div>
+                  <div><a href=''>점수인증</a></div>
+                  <div><a href=''>볼링은 나 처럼</a></div>
+                </div>
+                <div class="nav4">
+                  <div><a href=''>볼링의역사</a></div>
+                  <div><a href=''>터키터키</a></div>
+                  <div><a href="">볼링킹만화</a></div>
+                </div>
+                <nav class="nav">
+                   <ul>
+                        <li><a href=''>볼링의역사</a></li>
+                        <li><a href=''>볼링강좌</a></li>
+                        <li><a href=''>볼링은 나 처럼</a></li>
+                        <li><a href=''>점수인증</a></li>
+                        <li><a href=''>터키터키</a></li>
+                        <li><a href="">볼링킹만화</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+</body>
+</html>
+<script>
+  $(".menu_icon").click(function(){
+      var wd = window.innerWidth;
+       if (wd>760)
+         $(".nav4").slideToggle();
+       else
+          $(".nav2").slideToggle();
+  });
+  $(window).resize(function(){
+      var wd = window.innerWidth;
+      if (wd>760){
+        $(".nav2").removeAttr("style");
+      }
+      if( wd <760){
+        $(".nav4").removeAttr("style");
+      }
+  });
+
+
+  // $(".bar").click(function(){
+  //   $(".nav").slideToggle();
+  // });
+  // $(window).resize(function(){
+  //     var wd = window.innerWidth;
+  //     if (wd>760){
+  //       $(".nav").removeAttr("style");
+  //     }
+  // });
+</script>

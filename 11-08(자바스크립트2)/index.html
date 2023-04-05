@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+    <div id="user_box"> 
+        <input type="number" id="user" placeholder=" 숫자 몇개?" min="1" max="3">
+        <button onclick="print()">출력</button>
+    </div>
+    <div id="view">
+    </div>
+  
+
+
+</body>
+</html>
+<script>
+
+  var number = 1;
+
+  function print(){
+    var user = document.getElementById("user");
+    if(user.value<1 || user.value>3){
+      alert("1~3 중 하나를 입력하세요");
+      return; // 함수를 종료
+    }
+
+
+    var out="user : ";
+    for(var i=1 ; i<=user.value; i++){
+        out += number +"  ";
+        number++;
+    }
+    var view = document.getElementById("view");
+    
+    var p = document.createElement("p");
+    var text = document.createTextNode( out );
+    p.appendChild(text);
+    view.appendChild(p);
+
+    if(number >=31){
+      alert("유저 패배");
+      return;// 유저 패배이므로  컴퓨터는더이상 진행 할 필요없음
+    }
+
+
+    ///========== 컴퓨터  턴==========
+    var com = Math.floor(Math.random() * 3) + 1;
+    var out="com : ";
+    for(var i=1; i<=com; i++){
+      out += number +"   ";
+      number++;
+    }
+
+    p = document.createElement("p");
+    text = document.createTextNode( out );
+    p.appendChild(text);
+    view.appendChild(p);
+
+    if( number >=31){
+      alert("컴퓨터 패배 ");
+      return;
+    }
+
+    user.value="";
+    user.focus();
+  }
+/*
+  //  1.  user가 입력하는 숫자의 제한
+          1~3 중에서만 입력가능하도록 만들기,  
+          범위 벗어난값입력하면  다시 입력하라고 알림 띄우기
+      
+      2.  31을 출력하면 패배 ,  
+          user와 com 중 31이출력되면 패배 라고 알림 띄우기 
+
+
+
+  document.createElement() ->  새로운 태그생성
+  document.createTextNode( ) -> 텍스트(문자열) 생성
+  appendChild( ) -> 하위 노드 또는 태그로 삽입 하는함수
+
+
+  setInterval( 함수 , 10);
+
+  // 1부터 100까지의 숫자를 화면 에 출력
+  //for( var i=1; i<101; i++){
+  //  document.write( i +"<br>");
+  //}
+
+  // 10부터  100 까지 숫자중  짝수 만 출력 
+  for( var i=10; i<101; i++){
+    if( i%2 == 0)
+      document.write( i +"<br>");
+  }
+
+  for( var i=10; i<101; i= i+2 ){
+    document.write( i +"<br>");
+  }
+
+  //  랜덤 숫자 15개 출력  
+  //  랜덤범위( 1~ 100)
+  //  정수값 나오는 랜덤 함수 - Math.floor(Math.random()* ? ) + ? ;
+  //  Math.random() 함수는 0.000... ~ 0.9999.. 까지의 난수
+  //  Math.random() * 100 은  0.0000.. ~ 99.99999.. 
+  //  Math.floor()에 의해서 정수값 구한다.  0 ~ 99  
+  // 0~99 의 랜덤 값에  +1 씩 해준다.  1 ~ 100
+
+  for(var i=1; i<16; i++){
+    var num = Math.floor(Math.random()*100 ) + 1 ;
+    document.write( num +"<br>");
+  }
+
+  // prompt() 함수 사용
+  // 입력한 숫자 부터 100까지 숫자 출력 
+  // 예)  prompt를 통해 22입력 하였다면 22 부터 100까지 출력되어야함
+  // 참고- prompt로 숫자를 입력하면  숫자가아니다. 문자열이다.
+  //       문자열을 정수로 변환 해야한다.
+  var num = parseInt(prompt());
+  for(var i=num; i<=100; i++){
+    document.write( i + "<br>");
+  }
+
+  */
+
+
+
+</script>

@@ -1,0 +1,14 @@
+
+/*  9개 box 그리는 작업을 스타일에서 한다.   */
+
+#nine{
+  display:flex;
+  flex-wrap: wrap;
+  width:300px;  /*   9개div를 3줄3칸으로 배치해야하기에 . 한줄에 총너비가 300이니까 */
+}
+.box{
+  width:100px;
+  height:100px;
+  border:1px solid black; /* border : 선굵기 선모양 선색;  */
+  box-sizing: border-box; /* 현재 너비값에 border 굵기값 포함 하기 */
+}

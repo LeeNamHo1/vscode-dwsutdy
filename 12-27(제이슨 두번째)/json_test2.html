@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
+<script src="./fish_bank.js"></script>
+</head>
+<body>
+    <button id="get">인천 인공어초시설</button>
+    <div id="map" style="width:800px;height:500px;"></div>
+    <table id="list">
+      <tr>
+          <th width="100">연번</th>
+          <th width="300">지역명</th>
+          <th width="150">설치년도</th>
+          <th width="150">어초종류</th>
+      </tr>
+    </table>
+</body>
+</html>
+<style>
+    table tr{
+      height:50px;
+      cursor:pointer;
+      text-align:center;
+    }
+</style>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=26e5c90f6bf9cecfb4a0519aab1ac420"></script>
+
+
+<script>
+var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+var options = { //지도를 생성할 때 필요한 기본 옵션
+	center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+	level: 3 //지도의 레벨(확대, 축소 정도)
+};
+
+var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+
+fish_list=[]; //인공어초 객체 저장할 배열 
+
+  $("#get").click(function(){
+      url="http://api.odcloud.kr/api/15031992/v1/uddi:4ce2ec9d-093d-4474-ac7d-c7d54ab72bd5?page=1&perPage=10&serviceKey=aU2M7WTPerUiHviK%2Bo%2FXiW8lJKziToXUzCR94DRarfLfWW6nbPM%2FkuOYo%2Fntj30U24svccnw4EMvwXj3ccN%2Bxg%3D%3D";
+      
+      $.ajax({
+          url:url,  // 데이터 통신을 위한 주소( 보내고 받고 )
+          type:"GET",  // method 타입 넣기(GET,POST)
+          dataType:"JSON",   // 받거나 보내는 데이터 형식(JSON, XML)
+          success:function(res){ // 보내거나 받거나 통신이 성공하면 결과를success로 받게 된다.
+            console.log(res);
+            $.each(res.data , function(key ,value){
+                val=[]; //배열
+                $.each(value , function(k,v){
+                    val.push(v);
+                    //document.write(k+" : "+v+"<br>");
+                });
+                fish_list.push(new shelter(val[0],val[1],val[2],val[3],val[4],val[5],val[6],val[7],val[8],val[9],val[10]) );
+            });
+            console.log(fish_list[0].경도);
+            print_list(fish_list,"list");
+          },
+          error:function(XMLHttpRequest, textStatus, errorThrown){  // 통신이 실패할경우 error로 받는다.
+
+          }
+      });
+      
+      // const xml = new XMLHttpRequest();
+      // xml.open('GET',url,true);
+      // xml.send();
+      // xml.onload=function(){
+      //   //console.log(this.responseText );
+      //   jdata = JSON.parse(this.responseText) ;
+      //   $.each(jdata.data,function(k,v){
+      //     $.each(v,function(key,value){
+      //         document.write(key+"  "+value+"<br>");
+      //     })
+      //   })
+      // }
+
+  });
+
+  /*
+    new XMLHttpRequest() ->  xmlhttprequest 객체생성
+    xmlhttprequest  모든 브라우저에 내장 되어있다.
+     웹서버와 데이터를 교환하는데 사용
+     xmlhttprequest 객체에는  여러 속성이 있는데
+     그중에서 onload는 요청에대해 응답을 받을때 사용
+     요청은 클라이언트가 보내는거 ( 검색어 입력 , 로그인, 게시물작성 등등)
+     응답은 클라이언트가 보낸 요청을 서버가 그에대한 응답을 하는것
+     ( 로그인 시도 하면 로그인 된 화면이 나타나는건 응답으 ㅣ결과,
+     검색어 입력하고 검색하면 검색결과 화면 보여주는거 응답의 결과 )
+     요청은  open 속성으로 보낸다.
+     open에는 전송메서드, 주소, 동기화  를 입력해야만 요청을 할 수있다.
+     전송메서드 - GET, POST 
+     GET ->  요청에대한 내용을 그대로 전달하는방식(외부에 노출된다.)
+     POST -> 요청에대한 내용을 암호화 또는 변조 하여 전달
+     동기화  -> 상대방에 맞추는것
+     a라는 컴퓨터의속도가 10이다.  b라는 컴퓨터의 속도는 4이다.
+     a가 b에게 데이터를 보낸다면 자신의 속도가 10이기에 10의 속도로 보내는데
+     b의 속도가 자신 보다 느리다는걸 알고  b의 속도에 맞춰서 데이터를 보낸다.
+     그럼 a는 4의속도로 데이터를 보내는것
+  */
+</script>

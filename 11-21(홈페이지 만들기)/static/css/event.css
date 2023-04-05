@@ -1,0 +1,29 @@
+/*  event.css */
+
+#board_section{
+  width: calc( 100% - 200px );
+  min-width:500px;
+  position:relative;
+  display: grid;
+  grid-template-columns: repeat(4, 15rem);
+  grid-template-rows: 15rem 15rem 15rem;
+}
+.event_card{
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 0 10px #8c8c8c;
+}
+.event_img{
+  height:10rem;
+  border-bottom:2px solid #80bf41;
+  background:url('http://www.placeimg.com/250/200') no-repeat center;
+
+}
+.event_title{
+  padding:1rem;
+}
+.event_title h3{
+  text-align: center;
+  height:1.7rem;
+  font-weight:900;
+}

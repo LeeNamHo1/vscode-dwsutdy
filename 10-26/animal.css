@@ -1,0 +1,101 @@
+body, ul {
+  padding:0;
+  margin:0;
+}
+#wrap{
+  width:1000px;
+  font-size:17px;
+}
+
+#wrap h2{
+  font-size:22px;
+  margin:5px 0;
+}
+
+#wrap h3{
+  font-size:18px;
+  margin:3px 0;
+}
+#wrap h4{
+  font-size:13px;
+  margin:3px 0;
+}
+#wrap h6{
+  font-size:12px;
+  margin:1px 0;
+}
+
+.less-space{
+  letter-spacing: -2.6px;
+}
+
+.txt-white{
+  color:#ffffff;
+  font-weight:700;
+}
+.txt-yellow{
+  color:#ffff22;
+  font-weight:650;
+}
+.txt-green{
+  color:#8ce19acc;
+}
+
+.head{
+  height:50px;
+  background:#778899;
+}
+.head ul{
+  float:right;
+  list-style:none;
+  height:50px;
+}
+.head ul li{
+  float:left;
+  height:50px;
+  line-height:50px;
+  padding:0 10px;
+}
+
+/*-------  메뉴 영역  ---- */
+.menu-wrap{
+  background:#2d3339;
+}
+.menu-wrap>td{
+  padding:10px 0 15px 0;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.menu-wrap ul{
+  list-style:none;
+}
+.menu-wrap ul li{
+  float:left;
+  padding:0 15px;
+}
+
+/* -----  main 이미지 ---- */
+
+.image-wrap td{
+  background:url("../../image/bg.jpg")  no-repeat center;
+  background-size:corver;
+  height:368px;
+  position:relative;
+}
+.img-title-box{
+  position:relative;
+  left:500px;
+}
+.human{
+  font-family: '휴먼편지체','돋움';
+}
+.txt-orange{
+  color:#f1a416;
+  font-weight:800;
+  font-size:35px;
+}
+.bi-hearts{
+  color:#f16a16;
+  font-size:40px;
+}

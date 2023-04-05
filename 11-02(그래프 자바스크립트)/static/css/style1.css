@@ -1,0 +1,33 @@
+
+#input_box{
+  position:relative;
+  padding:20px 0;
+  width:600px;
+  margin:0 auto;
+}
+#input_box input{
+  height:30px;
+  font-size:17px;
+  padding-left:10px;
+}
+#input_box a{
+  width:100px;
+  display: inline-block;
+  background: #9a9a9a;
+  text-align: center;
+  padding:10px 0;
+ /* height:30px;
+  line-height:30px;*/
+}
+
+#sp1, #sp2, #sp3{
+  border:1px solid black;
+}
+#sp1{ width:500px;}
+#sp2{ 
+  width:500px;
+  display: inline-block;
+}
+#sp3{ 
+  display: block;
+}

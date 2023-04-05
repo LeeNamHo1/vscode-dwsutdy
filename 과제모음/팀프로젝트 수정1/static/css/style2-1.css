@@ -1,0 +1,164 @@
+#box{
+  width:700px;
+  height:850px;
+  margin: 100px;
+  padding: 50px;
+  border: 5px solid rgb(180, 172, 172);
+  border-radius: 30px;
+}
+#myimg{
+  width:100%;
+  display: block;
+  border-radius: 30px;
+}
+#sofa{
+  padding-left: 10px;
+  margin:50px;
+  width:600px;
+  display:flex;
+  align-items: center;
+}
+.sofa_box{
+  width:100px;
+  height:100px;
+  margin: 0 10px;
+  overflow: hidden;
+  text-align: center;
+}
+.sofa_img{
+  width:100px;
+  display: block;
+  border-radius: 20px;
+}
+
+#sit_main {
+  position: relative;
+  margin-left: 70%;
+  padding: 50px 15px 15px;
+  height: 700px;
+  border: 1px solid rgb(180, 172, 172);
+  border-top: 1px solid #000;
+  width: 600px;
+  background: #f4f4f4;
+  color: rgb(116, 98, 78);
+  bottom: 1100px;
+  right: 200px;
+}
+#sit_title {
+  margin: 0 0 5px;
+  font-size: 30px;
+  color: rgb(116, 98, 78);
+  font-weight: 800;
+}
+#sit_p {
+  font-size: 18px;
+  font-weight: 600;
+}
+.sit_tbl {
+  margin-bottom: 20px;
+  width: 100%;
+  border: 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+tr,th,td {
+  border-bottom: 1px solid rgb(180, 172, 172);
+  padding: 15px;
+}
+#frist {
+  border-top: 1px solid rgb(180, 172, 172);
+}
+#btn1,#btn2 {
+  width: 200px;
+  height: 50px;
+  font-size: 30px;
+  font-weight: 600;
+  color: white;
+  position: relative;
+  margin-top: 30px;
+  cursor: pointer;
+}
+#btn1 {
+  background: rgb(165, 167, 142);
+  margin-left: 80px;
+}
+#btn1 a {
+  color: white;
+}
+#btn2 {
+  background: rgb(192, 197, 133);
+  margin-left: 30px;
+}
+.img_list{
+  margin: 0 auto; 
+  width: 900px;
+}
+.img_list2{
+  margin: 0 auto; 
+  width: 1050px;
+}
+
+@media screen and (max-width:1610px) {
+  #sit_main {
+    position: static;
+    margin-left: 30%;
+    
+  }
+}
+@media screen and (max-width:680px) {
+  #box{
+    width:360px;
+    height:550px;
+    margin: 0;
+  }
+  #sofa {
+    padding-left: 0px;
+    margin: 50px;
+    width: 400px;
+    display: flex;
+    align-items: center;
+}
+.sofa_box {
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  overflow: hidden;
+  text-align: center;
+}
+  .sofa_img {
+    width: 50px;
+    display: block;
+    border-radius: 20px;
+}
+  .sofa_img {
+    width: 50px;
+    display: block;
+    border-radius: 20px;
+}
+  #sit_main {
+    position: static;
+    margin-left: 3%;
+    width: 400px;
+  }
+
+  /* 버튼 */
+  #btn1 {
+    background: rgb(165, 167, 142);
+    margin-left: 0;
+  }
+  #btn1 a {
+    color: white;
+  }
+  #btn2 {
+    background: rgb(192, 197, 133);
+    margin-left: 0;
+  }
+  .img_list>img{
+    width: 480px;
+  }
+  .img_list2>img{
+    width: 500px;
+  }
+}

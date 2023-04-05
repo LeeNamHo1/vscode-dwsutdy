@@ -1,0 +1,260 @@
+
+#menu_box .interior{
+  color:rgb(116, 98, 78);
+  
+}
+/* article */
+/* 상단 슬라이드 */
+#sliderWrap1 { 
+  width: 100%;
+  height: 1000px; 
+  overflow: hidden; 
+}
+#slider1 { 
+  display: block; 
+  margin:0; 
+  padding:0; 
+  width: 6000px; 
+}
+#slider1 > li { 
+  float:left; 
+  list-style:none; 
+  width: 1920px; 
+}
+
+/* 중간 슬라이드 */
+#slideText{
+margin-top: 150px;
+display: flex;
+justify-content: center;
+font-size: 30px;
+font-weight: 800;
+color: rgb(181, 141, 89);
+}
+
+#slideShow{
+  width: 1000px;
+  height: 700px;
+  position: relative;
+  margin: 10px auto;
+  overflow: hidden;   
+}
+
+.slides{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 6000px; 
+  transition: left 0.5s ease-out; 
+}
+.slides img{
+  width: 800px;
+  height: 700px;
+}
+
+.slides li:first-child{
+  margin-left: 60px;
+}
+
+.slides li:not(:last-child){
+  margin-right: 100px;
+}
+.slides li{
+  float: left;
+}
+.controller span{
+  position:absolute;
+  background-color: transparent;
+  color:  rgb(66, 71, 52); 
+  text-align: center;
+  border-radius: 50%;
+  padding: 10px 20px;
+  top: 50%;
+  font-size: 20px;
+  cursor: pointer;
+}
+.controller span:hover{
+  background-color: rgb(181, 181, 27);
+}
+.prev{
+  left: 10px;
+}
+/* 이전 화살표에 커서 올라갈때 살짝 왼쪽으로 이동 */
+.prev:hover{
+  transform: translateX(-10px);
+}
+.next{
+  right: 10px;
+}
+/* 다음화살표에 커서 올라갈대 살짝 오른쪽으로 이동 */
+.next:hover{
+  transform: translateX(10px);
+}
+
+/* 유튜브영상 */
+#video{
+  margin-top: 150px;
+  padding: 100px 100px;
+  background-color: rgb(193, 156, 109);
+  position: relative;
+}
+
+.videoText{
+  font-family: cursive;
+  position: absolute;
+  margin-left: 30px;
+  top: 30%;
+  left: 65%;
+}
+.videoText h1{
+  font-size: 40px;
+}
+.videoText p{
+  font-size: 18px;
+}
+/* ===========================하단 설명글 footer===================== */
+
+
+/* #footer{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-top: 3px solid olive;
+}
+#footer_box{
+   width: 100%;
+   height: 100%;
+   display: block;
+}
+#footer_box{
+   width: 96.5%;
+   height: 100%;
+   padding: 30px 30px 0 30px;
+}
+#footer_tool{
+   height: 23rem;
+   min-width: 640px;
+}
+#footer_tool>ul{
+   display: flex;
+   justify-content: space-between;
+}
+#footer_tool>ul>li{
+   list-style: none;
+   padding: 15px;
+}
+
+.footer_text{
+   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   color: black;
+}
+.footer_p_text>p{
+   margin: 0;
+   padding: 0;
+}
+.word2>a{
+   color: white;
+}
+.word>a:hover,.footer_p_text>p:hover{
+   text-decoration: underline;
+}
+
+.text{
+   width: 100%;
+   text-align: center;
+   padding-top: 40px;
+}
+
+.word2 {
+   display: inline-block;
+   margin-top: 10px;
+   margin-bottom: 20px;
+   padding: 7px;
+   border-radius: 2em;
+   background-color: #aa9557;
+}
+
+
+address{
+   font-style:normal;
+   font-size:15px;
+}
+.copy{
+   background:	#808000;
+   color:#fff;
+   font-size:13px;
+   padding:30px;
+   display:block;
+}
+#footer_box{
+   display: block;
+}
+.footer2{
+   display: none;
+}  */
+
+
+
+/* 애니메이션 */
+@keyframes fadein{
+  0%{opacity:0;}
+  100%{opacity:1;}
+  }
+@keyframes movex{
+  0%{opacity:0;}
+  50%{opacity:1;transform:translateX(60px);}
+  100%{transform:translateX(0px);}
+  }
+
+
+  /* 반응형 이미지 삭제 */
+@media screen and (max-width:1700px){
+  .movelogo img{
+    display: none;
+  } 
+}
+
+  /* 태블릿 */
+@media screen and (min-width:870px){
+  
+  .image-wrapper {
+    display: none;
+  }
+  .video-wrapper{
+    display: none;
+  }
+}
+@media screen and (max-width:870px){
+  .image-wrapper {
+    width: 100%;
+  }
+  #text-wrapper{
+    margin-top: 15%;
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 800;
+    color: rgb(181, 141, 89);
+  }
+  .image {
+    max-width: 100%;
+    height: auto;
+  }
+  .video-wrapper{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(193, 156, 109);
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+    padding-top: 20px;
+  }
+  .text-wrapper{
+    padding-bottom: 20px;
+  }
+  
+  #sliderWrap1, #slideShow, #slideText, #video{
+    display: none;
+  }
+}

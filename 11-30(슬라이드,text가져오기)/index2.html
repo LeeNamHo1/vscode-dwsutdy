@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <button id="애니1">애니메이션효과1</button>
+    <div id="박스1"></div>
+    <style>
+      #박스1{
+        width:100px;
+        height:100px;
+        background:lime;
+        position:absolute;
+      }
+    </style>
+
+    <button id="애니2">메뉴 보이기</button>
+    <div id="메뉴">
+        <nav> <span>메뉴1</span> <span>메뉴2</span><span>메뉴3</span>  </nav>
+    </div>
+    <style>
+      #메뉴{
+        width:0;
+        height:0;
+        position:absolute;
+        background:tomato;
+      }
+      #메뉴 nav{
+        display:none;
+      }
+    </style>
+
+<button id="이미지보기"> 이미지 클릭</button>
+<div id="이미지"></div>
+
+<style>
+  #이미지{
+    width:100px;
+    height:250px;
+    position:absolute;
+    background:aquamarine;
+  }
+</style>
+</body>
+</html>
+<script>
+$("#이미지보기").click(function(){
+    $("#이미지").animate( {width:"20px",height:"50px", top:"200px"}, function(){
+      $("#이미지").css("width","100px");
+      $("#이미지").css("height","250px");
+      $("#이미지").css("background","lightblue");
+    });
+});
+
+
+$("#애니2").click(function(){
+  $("#메뉴").animate( { width:"40px", height:"50px"},"slow");
+  $("#메뉴").animate( { width:"600px"});
+  $("#메뉴>nav").fadeIn(2000);
+});
+
+  $("#애니1").click(function(){
+      $("#박스1").animate( { left:"250px" , height:"200px" , top:"100px" }  );
+      $("#박스1").animate( { left:"50px", height:"100px"});
+  });
+
+  //   .css("font-size", "20px");
+</script>

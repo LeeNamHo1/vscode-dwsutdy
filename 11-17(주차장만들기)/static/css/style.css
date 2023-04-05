@@ -1,0 +1,45 @@
+
+#wrap{
+  width:100%;
+  display:flex;
+  flex-direction: column;
+}
+.info{
+  order:1;  /* flex-direction이 column 일때  순서 정하는 값 낮을수록 위에 배치*/
+}
+.info > h3{
+  font-size:20px; 
+  font-weight:800;
+}
+.active{ display:none;}
+
+/*========= 주차 버튼 ======*/
+.parking_bt{ order:2;}
+.parking_bt button{
+  background:#4090db;
+  border:0;
+  font-size:20px;
+  padding:10px 20px;
+  color:#fff;
+  font-weight:900;
+}
+
+
+/*========= 주차장 ========== */
+
+.parking_lot{
+  order:3;
+  width:1000px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.parking_lot div{
+  border:1px solid black;
+  width:300px;
+  height:250px;
+}
+img{
+  width:300px;
+  height:200px;
+}

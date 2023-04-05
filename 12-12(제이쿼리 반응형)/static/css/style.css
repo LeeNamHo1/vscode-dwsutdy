@@ -1,0 +1,62 @@
+#wrap{
+  width:100%;
+  max-width:1000px;
+  position:relative;
+  margin:50px;
+}
+.img_section{
+  width:100%;
+  position:relative;
+  display: flex;
+  gap:1%;
+}
+.img_box{
+  width:20%;
+  position:relative;
+}
+.img_box img{
+  width:100%;
+  display: inline-block;
+}
+
+
+/* @media 유형(속성:값) 논리연산자 (속성:값){  
+  }
+  유형 - all(모든장치) , screen(화면) , print(인쇄결과물),
+        speech(음성장치)
+  속성 - width, height, max-width,max-height, min-width,min-height
+  값 - css 설정값
+  논리연산자 - and, or, not
+  */
+
+@media screen and (max-width:800px){
+  h2{ color:red;}
+  /* 브라우저의 너비가 줄어들면 이미지가 작아지니까
+  800px 이하일경우 한줄에 이미지를 3개 배치하겠다. */
+  .img_section{
+    flex-wrap: wrap;
+  }
+  .img_box{
+    width:32%;
+  }
+}
+@media screen and (max-width:500px){
+  h2{color:blue;}
+  .img_box{
+    width:48%;
+  }
+}
+
+/*
+  반응형 페이지 제작시  미디어쿼리 사용
+  반응형 페이지 제작시 기준 정하기
+  모바일우선 ,  PC용 우선
+  일반적인 PC용 너비는 940
+  태블릿은 768
+  모바일은 478이다.
+  조금더 자세히 모바일용 제작하려면 크롬브라우저의 
+  개발자도구에서 기기별 사이즈 변경하여 제작하면 된다.
+
+  모바일용 우선 제작시  min 을사용
+  PC용 우선으로 제작시 max 사용
+*/

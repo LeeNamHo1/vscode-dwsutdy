@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="./static/css/index.css">
+ 
+</head>
+<body>
+
+  <div id="work_wrap">
+      <div class="label">  배경 </div>
+      <div class="input_data">  
+        <input type="color"  name="bg_color"  id="bg_color" >
+      </div>
+
+      <div class="label">  제목 </div>
+      <div class="input_data">  
+        <input type="text"  name="title"  id="title" >
+        <input type="range"  name="title_size"  id="title_size" min="10" max="30" step="1">
+        <input type="color"  name="title_color"  id="title_color" >
+      </div>
+
+      <div class="label">  소제목 </div>
+      <div class="input_data">  
+        <input type="text"  name="sub_title"  id="sub_title" >
+        <input type="range"  name="sub_title_size"  id="sub_title_size"  min="10" max="30" step="1">
+        <input type="color"  name="sub_title_color"  id="sub_title_color" >
+      </div>
+
+      <div class="label">  내용 </div>
+      <div class="input_data">  
+        <textarea  name="content"  id="content" ></textarea>
+        <input type="range"  name="content_size"  id="content_size"  min="10" max="30" step="1">
+        <input type="color"  name="content_color"  id="content_color" >
+      </div>
+
+      <div class="label">  버튼  </div>
+      <div class="input_data">  
+        <input type="text"  name="bt_title"  id="bt_title" >
+        <input type="range"  name="bt_title_size"  id="bt_title_size" min="10" max="30" step="1" >
+        <input type="color"  name="bt_title_colot"  id="bt_title_color" >
+        <input type="color"  name="bt_bg_color"  id="bt_bg_color" >
+      </div>
+  </div>
+
+  <div id="preview_wrap">
+    <div class="preview">
+      <div id="preview_title"> 제목 </div>
+      <div id="preview_sub_title"> 소제목 </div>
+      <div id="preview_content"> 내용 </div>
+      <div id="preview_button"> 
+        <button>버튼</button> 
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+<script src="./static/js/index.js"></script>

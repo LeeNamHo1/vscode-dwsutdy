@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+// 객체 - 객체라 하면  물건,사물 등 정의한것  
+//       책상 - 높이, 너비, 폭, 모양, 색, 책상재료
+//       이남호 - 키, 몸무게, 시력,  IQ, MBTI
+//       jyj - 키, 몸무게, 시력, IQ, MBTI  
+//객체 생성 방법1 (  key, value 한쌍으로 객체의 데이터 생성 )
+var 이남호={
+  키:"140",   // key : 키 , value: 140
+  몸무게:"80",// key:몸무게 , value: 80
+  IQ:"60"    // key: IQ , value:60
+}
+var jyj={
+  키:"160",
+  몸무게:"45",
+  IQ:"110"
+}
+
+document.write(이남호['몸무게']);  //객체의 데이터사용방법은 객체이름[key]
+이남호['몸무게']=65;
+document.write(이남호['몸무게']);
+// 리터럴 - 데이터 그 자체 를 리터럴이라고 한다.
+//  10 - 정수리터럴 ,  "오시우" - 문자열리터럴 , 3.14 - 실수리터럴
+
+
+// 객체 생성 방법 2.  - 생성자를 이용한 객체생성
+// 클래스 생성자 메서드
+// 자바- 생성자메서드는 클래스의 객체생성시  객체공간을 초기화 해주기위한
+//       메서드 이다. 공간을 초기화 해주지않으면 아무값도 없기때문에
+//       사용시 오류발생한다.
+//member m = new member("a",10);
+// 자바스크립트에서 객체 생성방법으로 생성자함수를 사용하여 객체생성
+function people(돈, IQ, 특징){
+    this.돈 = 돈,
+    this.IQ=IQ,
+    this.특징=특징,
+    this.출력 = function(){
+      return "돈 : "+this.돈+" IQ : "+this.IQ+" 특징 :"+this.특징;
+    }
+}
+
+var 이남호 = new people(1000,80,"안경착용")
+var 우하염 = new people(40000, 105, "일본어좀함")
+
+document.write( 이남호.IQ ); // . -> 접근연산자
+document.write( 우하염.특징);
+document.write("<br>");
+document.write("돈 : "+이남호.돈+" IQ : "+이남호.IQ+" 특징 : "+이남호.특징);
+document.write("<br>");
+document.write( 이남호.출력() +"<br>");
+document.write( 우하염.출력() + "<br>");
+이남호['천재?바보?'] = '천재';
+
+
+</script>

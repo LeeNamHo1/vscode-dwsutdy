@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#nine{
+    display:flex;
+    flex-wrap: wrap;
+    width:100%;
+}
+.UIAll{
+    width:100px;
+    height:100px;
+    border:1px solid black; /* border : 선굵기 선모양 선색;  */
+    box-sizing: border-box; /* 현재 너비값에 border 굵기값 포함 하기 */
+    text-align: center; /* 글씨 가운데 */
+    line-height: 100px;
+    border-style: dashed;
+
+}
+.UI1{
+    width:100px;
+    height:100px;
+    background-image: url(/gogogo/static/image/download.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.UI2{
+    width:100px;
+    height:100px;
+    background-image: url(/gogogo/static/image/download2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.UI3{
+    width:100px;
+    height:100px;
+    background-image: url(/gogogo/static/image/download3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.UI4{
+    width:100px;
+    height:100px;
+    background-image: url(/gogogo/static/image/download4.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.UI5{
+    width:100px;
+    height:100px;
+    background-image: url(/gogogo/static/image/download5.jpg); /* 이미지넣을곳 */
+    background-position: center; /* 이미지 가운데에 유링게슝 하기 */
+    background-repeat: no-repeat; /* 이미지 중복안되게 하기 */
+    background-size: cover; /* 이미지 꽉채우기 */
+}
